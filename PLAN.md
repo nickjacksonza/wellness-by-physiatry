@@ -54,10 +54,12 @@ Not blockers. The site builds and ships complete without any of these resolved; 
 | # | Item | Default used in the build | Impact of the real value |
 |---|---|---|---|
 | 1 | **Formspree form ID** | Placeholder ID in `site.json`; form renders, validates, and shows its success state. Free tier caps at 50 submissions/month — check that against expected volume. | One field |
-| 2 | **Contact email** | `info@wellnessbyphysiatry.com` (per Ace's review note). The dev site cloaks its address behind an obfuscation script, so it couldn't be read directly. | One field |
+| 2 | **Contact email** | ~~`info@wellnessbyphysiatry.com`~~ — **resolved.** The dev site's WP REST API (not the cloaked front-end) exposes `fabiollakoppMD@wellnessbyphysiatry.com`; it also matches the copy doc. Used in the build. | Done |
 | 3 | **OpenPM billing URL** | "Pay a bill" routes to phone. Dr. Kopp's links arrived corrupted — the `groupId` parameter lost characters in transit. | One link |
-| 4 | **Veronica's headshot + location photos** | Team cards degrade to a monogram tile in brand colours, not a broken frame; locations use the licensed stock. Veronica's photo is likely attached to the 14 May "colors and veronica's pic" email. | Drop-in file |
+| 4 | **Veronica's headshot + location photos** | Team cards degrade to a monogram tile in brand colours, not a broken frame (white tile — sage-on-sage is invisible on a band, learned the hard way in Phase 4); locations use the licensed stock. Veronica's photo is likely attached to the 14 May "colors and veronica's pic" email. Her role title also conflicts: dev site says "Experience Coordinator", copy doc says "Clinic Coordinator" — used the latter, confirm at review. | Drop-in file |
 | 5 | **Google Business Profile** | Schema is complete and correct; GBP must be claimed and matched to it or the local SEO work is wasted. | Off-site task |
+| 6 | **T.D.'s age: 65 or 56** | §12 says 65; the dev site's FAQ page states 56 for the same quote. Used 65 (§12 is the override authority) but this reads as a genuine data error somewhere upstream — confirm with Dr. Kopp rather than assume. | One field |
+| 7 | **Sixth pillar of Lifestyle Medicine** | Every source (copy doc, dev site) lists exactly five pillars — sleep, nutrition, stress, exercise, risky substances — introduced with "such as", implying a sixth exists but was never written down. Shipped as five (`about.html`, Phase 4). Don't invent a sixth; ask. | One field |
 
 **Also worth raising at the review, none of it build-blocking:** the sage/forest palette (Dr. Kopp asked repeatedly for more vibrant greens — Leaf `#6BBF59`, Forest `#0F3D2E`, Bright Lime `#99FF33` — and dislikes teal and fluorescent green, so walk her through the final system rather than letting it surprise her); whether "patients" becomes "survivors" sitewide, which Ellie's doc flags as pending; the final public list of named referral partners; and a logo SVG, since only raster exists — though the 5KB PNG export is good enough to ship on.
 
@@ -105,6 +107,8 @@ The generator is ~150 lines of Python, standard library only. The output is ordi
 │   └── … one folder per page
 └── PLAN.md
 ```
+
+**Since Phase 1:** `build.py` bundles `tokens.css` + `styles.css` into one `docs/css/site.css` at build time (one render-blocking request, matching §11's "one CSS file" rule) — the two source files stay separate, only the output is merged. `images/stock/` holds full-size crop sources and is excluded from `docs/` by the generator; never link to it from a page. Real-photo `.avif`+`.jpg` pairs at their shipped size live in `images/<page>/`.
 
 **`site.json` is the single source of truth** for anything that appears in more than one place: phone, fax, email, both addresses, both sets of hours, transit and parking notes, portal URL, form ID, social links, nav structure. Changing the phone number is one edit, everywhere.
 
@@ -266,6 +270,8 @@ Non-negotiables from the design system:
 | Footer | `.site-footer` | all | address left, links middle, hours right, legal beneath |
 | Pull quote | `.pull-quote` | About, Team | Newsreader italic — Dr. Kopp's own voice |
 
+**Built in Phase 4, use these — don't reinvent:** `.page-hero` (inner-page hero, lighter than Home's), `.text-card` (service-page H3 cards, no photo), `.prose-grid` (About-style three-column H3 prose, not cards), `.pillar-list` (labelled two-column list, e.g. Lifestyle Medicine pillars), `.crosslink` (the 2–3-card "where to go next" block every page ends on before the CTA band), `.managed-list` (left-border condition/item list, e.g. "Conditions we manage"). Service pages use `.text-card`; prose pages use `.prose-grid`. Both end on `.crosslink-grid`.
+
 **Two details worth getting right, because they carry the brand:**
 
 The umbrella. The copy doc contains the line *"The umbrella in our logo means that we are all connected, and so are your symptoms."* That is the best sentence in the entire source material and it currently appears nowhere prominent. Give it space — a pull quote on About, or the lead into the conditions strip on Home.
@@ -390,7 +396,7 @@ Scope-of-practice corrections from Dr. Kopp. These are not preferences; violatin
 - Never **"cognitive therapy"** or **"therapeutic counseling"** as WbP services — speech therapists and psychologists own those terms. Say **"therapeutic coaching"**, coaching on principles of cognitive therapy, plus medication management. *The dev site's Physiatry page still says "supportive therapy sessions" — fix on the way across.*
 - **No in-house physical therapy, no art therapy.** WbP refers out. Partner therapists cover dizziness, tinnitus, bruxism, balance, headache, breathing retraining, massage, myofascial decompression, reiki, and performance therapy.
 - **"Rehabilitation treatment plans"** or "care plans", never "rehabilitation techniques" — she does no manual therapies. **"Health coaching"**, not "life coaching".
-- **Testimonials: initials, gender, diagnosis only.** Some patients have pending court cases. The two real testimonials become **"T.D., Female, Stroke, 65"** and **"J.L., Female, Stroke, 36"**.
+- **Testimonials: initials, gender, diagnosis only.** Some patients have pending court cases. The two real testimonials become **"T.D., Female, Stroke, 65"** and **"J.L., Female, Stroke, 36"**. **The live dev site currently publishes these as "T Driver" and "J Lee" on six pages** (home, about, services, FAQ, referrals, lifestyle-medicine) — when pulling copy from the dev site for Phases 5–6, this substitution has to be made every time, not just once. Quotes verified real via WP REST API, used on Home already: *"Dr Kopp, you are friendly, knowledgeable, patient, smart, kind, crazy, laugh, and have a sweet personality."* (T.D.) and *"Dr Kopp, we love you and the way you care for your patients; you and your staff are great with the way you handle everything, like your patients are your family. Thank you!"* (J.L.)
 - **Insurance:** "we accept most insurances" — BCBS, Aetna, United, Medicare, Medicaid, most marketplace plans. Membership for the uninsured; Medicare rules bar discounted self-pay framing, so present membership as a structure, not a discount.
 - **Group sessions:** weekly for 6 weeks, then once every 2 months.
 - **Symptom language:** "mental fogginess, dizzy spells, slow thinking, difficulty multitasking, inexplicable fatigue, mood swings, irritability" — not "cognitive difficulties". "Individual overall health status", not "individual healing processes".
@@ -399,6 +405,8 @@ Scope-of-practice corrections from Dr. Kopp. These are not preferences; violatin
 - **Footer year:** 2026. The clinic was founded in 2025 and the old "© 2023" bothered her.
 - **Fix these typos, don't carry them:** "Portugêse" → "Português", "spasticty" → "spasticity", "surrefergery" → "surgery", "Behaviour" → "Behavior", "Centres" → "Centers", "Medicade" → "Medicaid".
 - **Terminology:** "Modern", not "Nontraditional". "Trusted partners", not "trusted therapy partners". "Inclusive approach", not "prejudice free".
+- **"Mental fogginess", not "brain fog".** Same substance rule as the symptom-language item above — the dev site uses "brain fog" casually in several places; don't carry it across.
+- **Avoid "holistic"** in scope-of-practice-adjacent copy — it reads as alternative-medicine positioning against a physician-led practice. Design-system readme's own term is "whole-person".
 
 ---
 
@@ -426,16 +434,18 @@ Dr. Kopp's art direction, from her 3 June email: **page headers are foliage or l
 
 | Phase | Work | Done when |
 |---|---|---|
-| **1. Foundation** | Repo, `build.py`, `site.json`, partials, `tokens.css`, fonts self-hosted, consent + GA4 wired | `python3 build.py` produces a page with correct header and footer |
-| **2. Assets** | Pull the dev library into `images/`, convert and generate posters, write alt text | Every asset in place, named, and described |
-| **3. Reference page** | `index.html` built from `Home.dc.html` — every component appears once | Home passes Lighthouse 95+, validates, schema clean |
-| **4. Templates** | One service page and one prose page as the two patterns | Both pass the same checks |
-| **5. Fill** | Remaining pages from the two templates + §4 copy | All 15 URLs live, nav complete, no orphans |
+| **1. Foundation** ✅ | Repo, `build.py`, `site.json`, partials, `tokens.css`, fonts self-hosted, consent + GA4 wired | `python3 build.py` produces a page with correct header and footer |
+| **2. Assets** ✅ | Pull the dev library into `images/`, convert and generate posters, write alt text | Every asset in place, named, and described |
+| **3. Reference page** ✅ | `index.html` built from `Home.dc.html` — every component appears once | Home passes Lighthouse 95+, validates, schema clean — **got 100/100/100 a11y/BP/SEO, LCP 1.5s** |
+| **4. Templates** ✅ | `services/brain-injury-rehabilitation.html` + `about.html` as the two patterns | Both pass the same checks — **100/100/100, zero failed audits** |
+| **5. Fill** | Remaining 11 pages from the two templates + §4 copy, pulling from the dev-site WP REST API (`/wp-json/wp/v2/pages?per_page=100`) as the richest copy source, filtered through §12 | All 15 URLs live, nav complete, no orphans — **gate: a link-checker script that walks every built page for `href`/`src`/`srcset` targets that don't resolve on disk; zero missing is done** |
 | **6. Systems** | Form live, full schema graph, sitemap/robots/llms.txt, 404, privacy, accessibility statement | Rich Results Test clean on Home, a service page, and FAQ |
 | **7. Ship to review** | Push to GitHub, enable Pages from `/docs`, walk the whole site | Review URL live and complete |
 | **8. Post-review** | Sign-off items from §2 dropped in, 301 map from Framer, GBP alignment | QA checklist green, production domain live |
 
 Phase 3 is the one that matters. Get Home genuinely right and phases 4–5 are mechanical.
+
+**Copy workflow that worked in Phase 4, repeat for Phase 5:** draft from the dev-site page (richest copy, per §0) plus the matching copy-doc section, then run an adversarial pass that checks the draft line-by-line against every §12 rule and flags em dashes, off-list symptom words, hype, and unsourced claims. Triage the flags — some are real (apply), some are the auditor over-reading a line that's actually fine (e.g. a fixed §4 H1, or a line already sourced elsewhere) — don't apply blind.
 
 ---
 
