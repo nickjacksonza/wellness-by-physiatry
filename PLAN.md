@@ -207,6 +207,25 @@ Every content page follows the same skeleton:
 
 Deviations: Home adds the conditions strip, an FAQ trio, testimonials, and both locations. Contact swaps step 3 for form + locations + transit. FAQ swaps it for the accordion set. Insurance & Billing swaps it for the three-column membership comparison.
 
+### Sanity pass against the dev site (post-Phase 5)
+
+A final diff against `projects.slash301.com/Clients/WellnessPhys/` turned up two real gaps worth closing, one enhancement to layer in opportunistically, and three things deliberately left out.
+
+**To do:**
+
+1. **Embed real Google Maps on Contact, not just an "Open in maps" link.** The dev site embeds an actual Google Maps `<iframe>` under each location on its contact page; ours (`contact.html`) only links out. An embedded map is better UX (the office location is visible without leaving the page) and helps local SEO. Add one `<iframe>` per location inside `.contact-card`, sized to match the card's existing rhythm, lazy-loaded (`loading="lazy"`). **Keep the "Open in maps" link too** — it stays as the accessible/fallback path when the iframe doesn't render or isn't wanted (reduced-data users, screen readers, print).
+2. **Name the actual community-partner organizations on Referrals, not just categories.** `referrals.html` currently groups community partners generically ("adult day care," "legal services," "food pantries"). The dev site's Patient Resources page names real, linked organizations: CSA/community-supported farms (Growing Solutions Farm, Just Roots, Star Farm, CSA Chicago Patchwork Farms, Green Earth Harvest), low-cost legal services (CDEL, CVLS, Illinois State Bar), adult day care (Midwest Brain Injury Clubhouse, Casa Central, Among Friends Adult Day Care), transportation (BriteLift), and support/companion care (Caring.com, Papa.com). Named, linked partners read as more credible and carry more local-SEO weight than generic categories. **Do not add this list silently** — §2 already flags "the final public list of named referral partners" as unconfirmed with Dr. Kopp's team; get that confirmation before publishing named orgs, since a stale or wrong partner name is worse than a generic category.
+
+**Nice to have, apply where it fits:**
+
+3. **Carry the condition leaf icons through to the pages that discuss each condition.** Home already uses a distinct hand-drawn leaf per condition (§13: `leaf-tbi`, `leaf-stroke`, `leaf-concussion`, `leaf-cognitive`, `leaf-neurobehavioral`, each on its own tinted circle). Reuse the matching leaf as a small motif on the service/FAQ content that discusses that condition (e.g. `leaf-concussion` near concussion content on `services/concussion-management.html`, `leaf-tbi`/`leaf-stroke` on `services/brain-injury-rehabilitation.html`) so the visual vocabulary established on Home carries through the site instead of stopping there.
+
+**Considered and deliberately not carried across:**
+
+- **The dev homepage's "500+ Patients Helped" stat card.** No source in PLAN.md backs a number. Don't invent stats — if Dr. Kopp wants to publish one, get the real figure first.
+- **The dev site's scrolling marquee of condition keywords under the hero.** A nice motion touch, not a gap. Optional polish only if there's time; not required for launch.
+- **Alternating photo/text rows on the dev Physiatry page.** Looser than the site's established `.text-card` pattern, and leans on the same handful of stock photos already reused elsewhere — the exact repetition this review exists to catch. Keep the current photo-free `.text-card` treatment on service pages.
+
 ---
 
 ## 5. Design tokens
