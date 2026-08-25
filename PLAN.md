@@ -22,6 +22,8 @@ The goal is a finished site, not a draft: something Dr. Kopp opens and recognise
 
 Client corrections from Dr. Kopp's emails and review docs override all three on matters of fact and scope of practice — see §12, which is non-negotiable.
 
+**`Home.dc.html` is an editable Claude Design canvas component** (JSX, with props like `showFaq`/`showLocations`/`photoTreatment`), not literal markup to lift. Building the Phase 3 reference page means porting its structure and copy into the static partials, not copying its HTML source directly.
+
 ---
 
 ## 1. Decisions locked
@@ -146,7 +148,7 @@ The generator is ~150 lines of Python, standard library only. The output is ordi
 
 | Page | Copy doc section | Notes |
 |---|---|---|
-| Home | "1 Home" | Hero, conditions strip, three service cards, FAQ trio, both locations, testimonials |
+| Home | "1 Home" | Confirmed section order from `Home.dc.html`: header → hero → 3-col "who we help / how we heal differently / a path to healing" band (sage-100) → 5 condition tags → service card grid → Dr. Kopp quote block → FAQ trio (accordion) → both location cards → CTA band → footer. The quote block's photo was a design-canvas placeholder ("awaiting headshot") — use the real headshot from §13 (`Dr-F-Kopp.avif`), not a placeholder. **Discrepancy to resolve deliberately, not inherit:** the canvas has four service cards (Brain Injury Rehab / Lifestyle Medicine / Group Sessions / Referrals), which don't line up 1:1 with the four service sub-pages this plan defines (Brain Trauma & Stroke / Concussion / Lifestyle Medicine / Physiatry & PM&R). Recommend Home's cards mirror the actual four service sub-pages for nav consistency — decide this explicitly in Phase 3, don't default to the canvas set. |
 | About | "About Us" → Our Story | Dev site's version is stronger — six pillars of Lifestyle Medicine, the autonomy framing. ~350 words. |
 | Team | Dr. Kopp bio + Veronica | Dev site has the refined bio: TIRR Memorial Hermann and Schwab Rehabilitation Hospital, "quarterback during your recovery" |
 | Mission & Values | Our Mission / Our Vision | Use Ellie's Working Doc versions, the most recent and clearest. Ace's shorter alternatives are a sign-off option. |
