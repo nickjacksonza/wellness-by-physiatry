@@ -1,0 +1,86 @@
+{
+  "name": "Wellness by Physiatry",
+  "domain": "https://wellnessbyphysiatry.com",
+  "phone": "(773) 312-4423",
+  "phone_e164": "+17733124423",
+  "fax": "(773) 312-4522",
+  "fax_e164": "+17733124522",
+  "email": "fabiollakoppMD@wellnessbyphysiatry.com",
+  "portal_url": "https://portal-app.praxisemr.com/login",
+  "formspree_id": "PLACEHOLDER",
+  "billing_url": "",
+  "languages": ["English", "Español", "Português"],
+  "founded": "2025",
+  "copyright_year": "2026",
+  "locations": [
+    {
+      "id": "east-loop",
+      "name": "East Loop",
+      "address": "30 N Michigan Ave",
+      "city": "Chicago",
+      "state": "IL",
+      "zip": "60602",
+      "hours": "8am–4pm Wednesdays & Fridays",
+      "days": ["Wednesday", "Friday"],
+      "opens": "08:00",
+      "closes": "16:00",
+      "parking": "Millennium Parking Garage, Grant Park North Entrance, 25 N Michigan Ave ($14 up to 5 hours with validation)",
+      "transit": "Red Line to Lake/Washington, or Green Line to Washington/Wabash",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=30+N+Michigan+Ave+Chicago+IL+60602",
+      "geo": { "lat": 41.8827, "lng": -87.6246 }
+    },
+    {
+      "id": "lincoln-park",
+      "name": "Lincoln Park",
+      "address": "2555 N Southport Ave",
+      "city": "Chicago",
+      "state": "IL",
+      "zip": "60614",
+      "hours": "8am–4pm Tuesdays & Thursdays",
+      "days": ["Tuesday", "Thursday"],
+      "opens": "08:00",
+      "closes": "16:00",
+      "parking": "Street parking",
+      "transit": "Red Line to Fullerton, or 74 bus to Fullerton & Southport",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=2555+N+Southport+Ave+Chicago+IL+60614",
+      "geo": { "lat": 41.9286, "lng": -87.6636 }
+    }
+  ],
+  "nav": [
+    { "label": "Home", "href": "index.html" },
+    {
+      "label": "About Us",
+      "href": "about.html",
+      "children": [
+        { "label": "Our Story", "href": "about.html" },
+        { "label": "Meet the Team", "href": "team.html" },
+        { "label": "Mission & Values", "href": "mission.html" }
+      ]
+    },
+    {
+      "label": "Our Services",
+      "href": "services.html",
+      "children": [
+        { "label": "Overview", "href": "services.html" },
+        { "label": "Brain Trauma & Stroke", "href": "services/brain-injury-rehabilitation.html" },
+        { "label": "Concussion Management", "href": "services/concussion-management.html" },
+        { "label": "Lifestyle Medicine", "href": "services/lifestyle-medicine.html" },
+        { "label": "Physiatry & PM&R", "href": "services/physiatry-pmr.html" }
+      ]
+    },
+    {
+      "label": "Patient Resources",
+      "href": "patient-resources.html",
+      "children": [
+        { "label": "Overview", "href": "patient-resources.html" },
+        { "label": "FAQs", "href": "faq.html" },
+        { "label": "Insurance & Billing", "href": "insurance-billing.html" },
+        { "label": "Referrals & Community", "href": "referrals.html" }
+      ]
+    },
+    { "label": "Contact", "href": "contact.html" }
+  ],
+  "cta_label": "Request an appointment",
+  "cta_href": "contact.html#appointment",
+  "gtm_id": "GTM-XXXXXXX"
+}

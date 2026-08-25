@@ -1,0 +1,338 @@
+{
+  "plugins": [
+    "react",
+    "import"
+  ],
+  "rules": {
+    "react/forbid-elements": [
+      "warn",
+      {
+        "forbid": []
+      }
+    ],
+    "no-restricted-imports": [
+      "warn",
+      {
+        "patterns": [
+          {
+            "group": [
+              "components/core/**",
+              "components/marketing/**",
+              "components/navigation/**",
+              "ui_kits/website/**"
+            ],
+            "message": "Import design-system components from 'index.js', not component internals."
+          }
+        ]
+      }
+    ],
+    "no-restricted-syntax": [
+      "warn",
+      {
+        "selector": "Literal[value=/#[0-9a-fA-F]{3,8}\\b/]",
+        "message": "Raw hex color — use a design-system color token via var()."
+      },
+      {
+        "selector": "Literal[value=/\\b\\d+px\\b/]",
+        "message": "Raw px value — use a design-system spacing token via var()."
+      },
+      {
+        "selector": "Literal[value=/font-family\\s*:\\s*(?!['\\\"]?(?:Newsreader|Manrope))/i]",
+        "message": "Font not provided by the design system. Available: Newsreader, Manrope."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|variant|size|href|onClick|disabled|key|ref|className|style|children)$/]",
+        "message": "<Button> doesn't accept that prop. Declared props: children, variant, size, href, onClick, disabled."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute[name.name='variant'] > Literal[value!=/^(?:primary|secondary|ghost)$/]",
+        "message": "<Button> variant must be one of 'primary' | 'secondary' | 'ghost'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute[name.name='size'] > Literal[value!=/^(?:sm|md|lg)$/]",
+        "message": "<Button> size must be one of 'sm' | 'md' | 'lg'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ConditionTag'] > JSXAttribute > JSXIdentifier[name!=/^(?:condition|description|assetBase|key|ref|className|style|children)$/]",
+        "message": "<ConditionTag> doesn't accept that prop. Declared props: condition, description, assetBase."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ConditionTag'] > JSXAttribute[name.name='condition'] > Literal[value!=/^(?:tbi|stroke|concussion|cognitive|neurobehavioral)$/]",
+        "message": "<ConditionTag> condition must be one of 'tbi' | 'stroke' | 'concussion' | 'cognitive' | 'neurobehavioral'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ContactCard'] > JSXAttribute > JSXIdentifier[name!=/^(?:label|lines|variant|key|ref|className|style|children)$/]",
+        "message": "<ContactCard> doesn't accept that prop. Declared props: label, lines, variant."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ContactCard'] > JSXAttribute[name.name='variant'] > Literal[value!=/^(?:light|dark)$/]",
+        "message": "<ContactCard> variant must be one of 'light' | 'dark'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='FAQItem'] > JSXAttribute > JSXIdentifier[name!=/^(?:question|answer|defaultOpen|key|ref|className|style|children)$/]",
+        "message": "<FAQItem> doesn't accept that prop. Declared props: question, answer, defaultOpen."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Footer'] > JSXAttribute > JSXIdentifier[name!=/^(?:logo|key|ref|className|style|children)$/]",
+        "message": "<Footer> doesn't accept that prop. Declared props: logo."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='NavBar'] > JSXAttribute > JSXIdentifier[name!=/^(?:logo|links|ctaLabel|ctaHref|key|ref|className|style|children)$/]",
+        "message": "<NavBar> doesn't accept that prop. Declared props: logo, links, ctaLabel, ctaHref."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='SectionHeading'] > JSXAttribute > JSXIdentifier[name!=/^(?:eyebrow|title|subtitle|align|key|ref|className|style|children)$/]",
+        "message": "<SectionHeading> doesn't accept that prop. Declared props: eyebrow, title, subtitle, align."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='SectionHeading'] > JSXAttribute[name.name='align'] > Literal[value!=/^(?:left|center)$/]",
+        "message": "<SectionHeading> align must be one of 'left' | 'center'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ServiceCard'] > JSXAttribute > JSXIdentifier[name!=/^(?:image|title|description|href|ctaLabel|key|ref|className|style|children)$/]",
+        "message": "<ServiceCard> doesn't accept that prop. Declared props: image, title, description, href, ctaLabel."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='TeamCard'] > JSXAttribute > JSXIdentifier[name!=/^(?:photo|name|role|bio|key|ref|className|style|children)$/]",
+        "message": "<TeamCard> doesn't accept that prop. Declared props: photo, name, role, bio."
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/index.js"
+      ],
+      "rules": {
+        "no-restricted-imports": "off"
+      }
+    }
+  ],
+  "x-omelette": {
+    "components": {
+      "Button": {
+        "replaces": []
+      },
+      "ConditionTag": {
+        "replaces": []
+      },
+      "ContactCard": {
+        "replaces": []
+      },
+      "FAQItem": {
+        "replaces": []
+      },
+      "Footer": {
+        "replaces": []
+      },
+      "NavBar": {
+        "replaces": []
+      },
+      "SectionHeading": {
+        "replaces": []
+      },
+      "ServiceCard": {
+        "replaces": []
+      },
+      "TeamCard": {
+        "replaces": []
+      }
+    },
+    "tokens": [
+      "--accent-vital",
+      "--accent-vital-bg",
+      "--accent-vital-strong",
+      "--border-strong",
+      "--border-subtle",
+      "--color-cream",
+      "--color-forest-500",
+      "--color-forest-700",
+      "--color-forest-800",
+      "--color-forest-900",
+      "--color-gold-100",
+      "--color-gold-300",
+      "--color-gold-500",
+      "--color-gold-700",
+      "--color-ink",
+      "--color-ink-soft",
+      "--color-mint-100",
+      "--color-mint-500",
+      "--color-mint-700",
+      "--color-sage-100",
+      "--color-sage-300",
+      "--color-sage-500",
+      "--color-sage-600",
+      "--color-sage-700",
+      "--color-sand-100",
+      "--color-sand-300",
+      "--color-sand-500",
+      "--color-sand-700",
+      "--color-teal-100",
+      "--color-teal-300",
+      "--color-teal-500",
+      "--color-teal-700",
+      "--color-white",
+      "--condition-cognitive",
+      "--condition-cognitive-bg",
+      "--condition-concussion",
+      "--condition-concussion-bg",
+      "--condition-neurobehavioral",
+      "--condition-neurobehavioral-bg",
+      "--condition-stroke",
+      "--condition-stroke-bg",
+      "--condition-tbi",
+      "--condition-tbi-bg",
+      "--container-max",
+      "--container-narrow",
+      "--duration-fast",
+      "--duration-normal",
+      "--ease-standard",
+      "--font-body",
+      "--font-display",
+      "--lh-normal",
+      "--lh-relaxed",
+      "--lh-snug",
+      "--lh-tight",
+      "--link",
+      "--link-hover",
+      "--radius-arch",
+      "--radius-lg",
+      "--radius-md",
+      "--radius-pill",
+      "--radius-sm",
+      "--shadow-lg",
+      "--shadow-md",
+      "--shadow-sm",
+      "--space-1",
+      "--space-10",
+      "--space-2",
+      "--space-3",
+      "--space-4",
+      "--space-5",
+      "--space-6",
+      "--space-7",
+      "--space-8",
+      "--space-9",
+      "--surface-brand",
+      "--surface-brand-soft",
+      "--surface-card",
+      "--surface-dark",
+      "--surface-page",
+      "--text-body",
+      "--text-body-lg",
+      "--text-brand",
+      "--text-eyebrow",
+      "--text-h1",
+      "--text-h2",
+      "--text-h3",
+      "--text-hero",
+      "--text-inverse",
+      "--text-on-brand",
+      "--text-primary",
+      "--text-secondary",
+      "--text-small",
+      "--tracking-eyebrow",
+      "--tracking-wide"
+    ],
+    "tokenKinds": {
+      "--color-sage-100": "color",
+      "--color-sage-300": "color",
+      "--color-sage-500": "color",
+      "--color-sage-600": "color",
+      "--color-sage-700": "color",
+      "--color-forest-500": "color",
+      "--color-forest-700": "color",
+      "--color-forest-800": "color",
+      "--color-forest-900": "color",
+      "--color-sand-100": "color",
+      "--color-sand-300": "color",
+      "--color-sand-500": "color",
+      "--color-sand-700": "color",
+      "--color-teal-100": "color",
+      "--color-teal-300": "color",
+      "--color-teal-500": "color",
+      "--color-teal-700": "color",
+      "--color-gold-100": "color",
+      "--color-gold-300": "color",
+      "--color-gold-500": "color",
+      "--color-gold-700": "color",
+      "--color-mint-100": "color",
+      "--color-mint-500": "color",
+      "--color-mint-700": "color",
+      "--accent-vital": "color",
+      "--accent-vital-strong": "color",
+      "--accent-vital-bg": "color",
+      "--color-cream": "color",
+      "--color-white": "color",
+      "--color-ink": "color",
+      "--color-ink-soft": "color",
+      "--surface-page": "color",
+      "--surface-card": "color",
+      "--surface-brand": "color",
+      "--surface-brand-soft": "color",
+      "--surface-dark": "color",
+      "--text-primary": "font",
+      "--text-secondary": "font",
+      "--text-inverse": "font",
+      "--text-on-brand": "font",
+      "--text-brand": "font",
+      "--border-subtle": "color",
+      "--border-strong": "color",
+      "--link": "color",
+      "--link-hover": "color",
+      "--condition-tbi": "color",
+      "--condition-tbi-bg": "color",
+      "--condition-stroke": "color",
+      "--condition-stroke-bg": "color",
+      "--condition-concussion": "color",
+      "--condition-concussion-bg": "color",
+      "--condition-cognitive": "color",
+      "--condition-cognitive-bg": "color",
+      "--condition-neurobehavioral": "color",
+      "--condition-neurobehavioral-bg": "color",
+      "--shadow-sm": "shadow",
+      "--shadow-md": "shadow",
+      "--shadow-lg": "shadow",
+      "--font-display": "font",
+      "--font-body": "font",
+      "--text-hero": "font",
+      "--text-h1": "font",
+      "--text-h2": "font",
+      "--text-h3": "font",
+      "--text-eyebrow": "font",
+      "--text-body-lg": "font",
+      "--text-body": "font",
+      "--text-small": "font",
+      "--lh-tight": "other",
+      "--lh-snug": "other",
+      "--lh-normal": "other",
+      "--lh-relaxed": "other",
+      "--tracking-eyebrow": "font",
+      "--tracking-wide": "font",
+      "--space-1": "spacing",
+      "--space-2": "spacing",
+      "--space-3": "spacing",
+      "--space-4": "spacing",
+      "--space-5": "spacing",
+      "--space-6": "spacing",
+      "--space-7": "spacing",
+      "--space-8": "spacing",
+      "--space-9": "spacing",
+      "--space-10": "spacing",
+      "--container-max": "spacing",
+      "--container-narrow": "spacing",
+      "--radius-sm": "radius",
+      "--radius-md": "radius",
+      "--radius-lg": "radius",
+      "--radius-pill": "radius",
+      "--radius-arch": "radius",
+      "--ease-standard": "other",
+      "--duration-fast": "other",
+      "--duration-normal": "other"
+    },
+    "fontFamilies": [
+      "Manrope",
+      "Newsreader"
+    ]
+  }
+}

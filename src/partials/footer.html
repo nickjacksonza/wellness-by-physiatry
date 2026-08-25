@@ -1,0 +1,52 @@
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div class="footer-col footer-brand-col">
+      <img class="footer-logo" src="{{ root }}images/global/wbp-umbrella-logo.png" alt="Wellness by Physiatry umbrella logo" width="72" height="72">
+      <p>Physician-led neurorehabilitation and lifestyle medicine in Chicago.</p>
+    </div>
+    <div class="footer-col">
+      <p class="footer-heading">Locations</p>
+      <address>
+        <p><strong>{{ loc0_name }}</strong><br>{{ loc0_address }}<br>{{ loc0_city }}, {{ loc0_state }} {{ loc0_zip }}<br>{{ loc0_hours }}</p>
+        <p><strong>{{ loc1_name }}</strong><br>{{ loc1_address }}<br>{{ loc1_city }}, {{ loc1_state }} {{ loc1_zip }}<br>{{ loc1_hours }}</p>
+      </address>
+    </div>
+    <div class="footer-col">
+      <p class="footer-heading">Explore</p>
+      <ul>
+        <li><a href="{{ root }}about.html" data-track="nav_click">About Us</a></li>
+        <li><a href="{{ root }}services.html" data-track="nav_click">Our Services</a></li>
+        <li><a href="{{ root }}patient-resources.html" data-track="nav_click">Patient Resources</a></li>
+        <li><a href="{{ root }}insurance-billing.html" data-track="nav_click">Insurance &amp; Billing</a></li>
+        <li><a href="{{ root }}faq.html" data-track="nav_click">FAQs</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <p class="footer-heading">Contact</p>
+      <ul>
+        <li><a href="tel:{{ phone_e164 }}" data-track="cta_click" data-label="footer-phone">{{ phone }}</a></li>
+        <li class="footer-plain">Fax {{ fax }}</li>
+        <li><a class="footer-email" href="mailto:{{ email }}" data-track="cta_click" data-label="footer-email">{{ email }}</a></li>
+        <li><a href="{{ portal_url }}" rel="noopener" data-track="outbound_click" data-label="footer-portal">Patient portal</a></li>
+        <li class="footer-plain">Please call to make an appointment.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-legal">
+    <p>&copy; {{ copyright_year }} Wellness by Physiatry. All rights reserved.</p>
+    <ul>
+      <li><a href="{{ root }}privacy.html">Privacy policy</a></li>
+      <li><a href="{{ root }}accessibility.html">Accessibility</a></li>
+      <li><button class="footer-cookie-btn" id="cookie-settings">Cookie settings</button></li>
+    </ul>
+  </div>
+</footer>
+<div class="consent-banner" id="consent-banner" hidden>
+  <p>We use cookies to understand how the site is used. No analytics run unless you accept.</p>
+  <div class="consent-actions">
+    <button class="btn btn-primary" id="consent-accept">Accept</button>
+    <button class="btn btn-secondary" id="consent-decline">Decline</button>
+  </div>
+</div>
+<script src="{{ root }}js/scripts.js" defer></script>
+<script src="{{ root }}js/animations.js" defer></script>

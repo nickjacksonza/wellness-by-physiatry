@@ -1,0 +1,11 @@
+:root{
+--radius-sm:6px;--radius-md:12px;--radius-lg:20px;--radius-pill:999px;
+--radius-arch:999px 999px 0 0;
+--ease-standard:cubic-bezier(.4,0,.2,1); /* @kind other */
+--duration-fast:150ms; /* @kind other */
+--duration-normal:250ms; /* @kind other */
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--surface-page);color:var(--text-primary);font-family:var(--font-body);font-size:var(--text-body);line-height:var(--lh-normal)}
+a{color:var(--link);text-decoration:none}
+a:hover{color:var(--link-hover);text-decoration:underline}

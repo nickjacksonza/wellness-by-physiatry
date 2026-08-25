@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+(function () {
+  try {
+    var stored = localStorage.getItem('theme_pref');
+    var theme = stored || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+    document.documentElement.setAttribute('data-theme', theme);
+  } catch (e) { document.documentElement.setAttribute('data-theme', 'dark'); }
+})();
+</script>
+
+<!-- Consent Mode v2 defaults, before GTM -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied',
+    analytics_storage: 'denied', functionality_storage: 'denied',
+    personalization_storage: 'denied', security_storage: 'granted',
+    wait_for_update: 500
+  });
+  (function () {
+    try {
+      var m = document.cookie.match(/(?:^|;\s*)consent_choice=(granted|denied)/);
+      if (m && m[1] === 'granted') {
+        gtag('consent', 'update', { analytics_storage: 'granted', functionality_storage: 'granted' });
+        console.log('[consent] Stored choice restored: granted');
+      } else if (m) { console.log('[consent] Stored choice restored: denied'); }
+    } catch (e) { console.warn('[consent] Restore failed', e); }
+  })();
+</script>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+
+<title>Coffee Subscriptions | Koppie Roasters Johannesburg</title>
+<meta name="description" content="Three simple coffee subscription plans from R185 a month, roasted in Kensington and delivered across Johannesburg. Pause or cancel any time.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#17110d">
+<link rel="canonical" href="https://www.koppieroasters.co.za/subscriptions.html">
+
+<meta name="geo.region" content="ZA-GP">
+<meta name="geo.placename" content="Johannesburg">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Coffee Subscriptions | Koppie Roasters Johannesburg">
+<meta property="og:description" content="Three simple coffee subscription plans from R185 a month, roasted in Kensington and delivered across Johannesburg. Pause or cancel any time.">
+<meta property="og:url" content="https://www.koppieroasters.co.za/subscriptions.html">
+<meta property="og:site_name" content="Koppie Roasters">
+<meta property="og:locale" content="en_ZA">
+<meta property="og:image" content="https://www.koppieroasters.co.za/og-image.webp">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" href="css/styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.koppieroasters.co.za/" },
+    { "@type": "ListItem", "position": 2, "name": "Coffee Subscriptions", "item": "https://www.koppieroasters.co.za/subscriptions.html" }
+  ]
+}
+</script>
+</head>
+
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- PRINCIPLE 1 (mental models): logo top-left linking home, primary nav
+     top-right, hamburger top-right on mobile. Every one of these is where
+     a visitor's blueprint says it should be. Nothing clever happens here
+     on purpose: this is the part that has to feel safe. -->
+<header class="site-header" id="top">
+  <div class="wrap header-inner">
+    <a class="brand" href="/" data-track="nav_click" data-label="logo">
+      <img src="https://placehold.co/48x48/2a201a/e0a75c.webp?text=K" alt="Koppie Roasters logo" width="48" height="48">
+      <span>Koppie</span>
+    </a>
+    <div class="header-actions">
+      <!-- PRINCIPLE 3 (chunking): four destinations plus one CTA. -->
+      <nav id="siteNav" class="site-nav" aria-label="Primary">
+        <ul>
+          <li><a href="/index.html" data-track="nav_click" data-label="home">Home</a></li>
+          <li><a href="/subscriptions.html" aria-current="page" data-track="nav_click" data-label="subscriptions">Subscriptions</a></li>
+          <li><a href="/about.html" data-track="nav_click" data-label="about">About</a></li>
+          <li><a href="/contact.html" data-track="nav_click" data-label="contact">Visit us</a></li>
+          <li><a class="nav-cta" href="/subscriptions.html" data-track="cta_click" data-label="nav_order">Order beans</a></li>
+        </ul>
+      </nav>
+      <button type="button" class="theme-toggle" id="themeToggle" aria-label="Switch to light theme">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"></path></svg>
+      </button>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="section" data-section="subscriptions">
+    <div class="wrap">
+      <h1>Subscriptions.</h1>
+      <p class="section-intro">Three plans. Each one is the plan before it plus three things, so there is nothing to cross-reference.</p>
+
+      <h2>Pick a plan.</h2>
+
+      <!-- ============================================================
+           PRINCIPLE 3 (chunking) IN ITS PUREST FORM.
+           The wrong version of this section repeats all nine features
+           in all three columns and asks the visitor to diff them by eye.
+           Instead each tier states what it inherits in one line, then
+           lists only the three NEW things. Working memory never has to
+           hold more than three items at once.
+      ============================================================ -->
+      <div class="tier-grid">
+
+        <article class="tier reveal">
+          <h3>Solo</h3>
+          <p class="tier-price">R185 <small>/ month</small></p>
+          <p class="tier-note">250g every two weeks. One brewer, one habit.</p>
+          <ul>
+            <li>250g of a rotating single origin</li>
+            <li>Ground to your brew method, or whole</li>
+            <li>Free delivery in Joburg and Pretoria</li>
+          </ul>
+          <a class="btn btn-ghost" href="/contact.html" data-track="cta_click" data-label="tier_solo">Choose Solo</a>
+        </article>
+
+        <article class="tier tier-featured reveal">
+          <span class="tier-flag">Most popular</span>
+          <h3>Duo</h3>
+          <p class="tier-price">R340 <small>/ month</small></p>
+          <p class="tier-note">500g every two weeks. Two coffee drinkers, or one serious one.</p>
+          <p class="tier-inherit">Everything in Solo, plus:</p>
+          <ul>
+            <li>Two different origins each delivery</li>
+            <li>Swap to espresso roast any month</li>
+            <li>First taste of new arrivals</li>
+          </ul>
+          <a class="btn btn-primary" href="/contact.html" data-track="cta_click" data-label="tier_duo">Choose Duo <span class="arrow">&rarr;</span></a>
+        </article>
+
+        <article class="tier reveal">
+          <h3>Office</h3>
+          <p class="tier-price">R920 <small>/ month</small></p>
+          <p class="tier-note">2kg weekly. Small teams and studios.</p>
+          <p class="tier-inherit">Everything in Duo, plus:</p>
+          <ul>
+            <li>Weekly delivery on a fixed day</li>
+            <li>Free grinder calibration on site</li>
+            <li>One barista training session a quarter</li>
+          </ul>
+          <a class="btn btn-ghost" href="/contact.html" data-track="cta_click" data-label="tier_office">Talk to us</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" data-section="compare">
+    <div class="wrap">
+      <h2>Side by side, grouped.</h2>
+      <p class="section-intro">Same information as above, for anyone who wants the full grid. Rows are grouped under three headings rather than run as one long list.</p>
+
+      <!-- PRINCIPLE 3: three category groups of two to three rows each,
+           instead of a flat nine-row table. Same data, a third of the
+           cognitive load. -->
+      <div class="table-scroll">
+        <table class="compare">
+          <caption class="visually-hidden">Comparison of Koppie Roasters subscription plans</caption>
+          <thead>
+            <tr><th scope="col">Feature</th><th scope="col">Solo</th><th scope="col">Duo</th><th scope="col">Office</th></tr>
+          </thead>
+          <tbody>
+            <tr><th colspan="4" scope="colgroup">The coffee</th></tr>
+            <tr><td>Weight per delivery</td><td>250g</td><td>500g</td><td>2kg</td></tr>
+            <tr><td>Origins per delivery</td><td>1</td><td>2</td><td>2</td></tr>
+            <tr><td>Espresso roast option</td><td>&mdash;</td><td>Yes</td><td>Yes</td></tr>
+
+            <tr><th colspan="4" scope="colgroup">Delivery</th></tr>
+            <tr><td>Frequency</td><td>Fortnightly</td><td>Fortnightly</td><td>Weekly</td></tr>
+            <tr><td>Free in Joburg and Pretoria</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+
+            <tr><th colspan="4" scope="colgroup">Extras</th></tr>
+            <tr><td>Early access to new arrivals</td><td>&mdash;</td><td>Yes</td><td>Yes</td></tr>
+            <tr><td>On-site grinder calibration</td><td>&mdash;</td><td>&mdash;</td><td>Yes</td></tr>
+            <tr><td>Quarterly barista training</td><td>&mdash;</td><td>&mdash;</td><td>Yes</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" data-section="subs_faq">
+    <div class="wrap">
+      <h2>Before you commit.</h2>
+      <div class="faq-list">
+        <details class="faq reveal">
+          <summary><h3>Is there a minimum term?</h3></summary>
+          <p>No. Pause, change plan or cancel from the link in any delivery email. Changes made before Sunday apply to the next delivery.</p>
+        </details>
+        <details class="faq reveal">
+          <summary><h3>Can I change my grind later?</h3></summary>
+          <p>Yes, and it is the single most common change people make. Reply to any delivery email and we will update it before the next roast.</p>
+        </details>
+        <details class="faq reveal">
+          <summary><h3>What happens over December?</h3></summary>
+          <p>The roastery closes for two weeks. We email in November so you can pull your last delivery forward or pause until January.</p>
+        </details>
+      </div>
+      <aside class="note reveal">
+        <h4>Not sure which plan?</h4>
+        <p>Most people who drink one to two cups a day land on Duo. If in doubt, start there and drop down later, it is a two-click change.</p>
+        <a class="btn btn-primary" href="/contact.html" data-track="cta_click" data-label="subs_note_contact">Ask us <span class="arrow">&rarr;</span></a>
+      </aside>
+    </div>
+  </section>
+</main>
+<!-- PRINCIPLE 1: footer at the bottom, contact details on the left,
+     links in the middle, legal on its own line. Boring by design. -->
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <p class="brand-foot">Koppie Roasters</p>
+      <address>
+        44 Roberts Avenue<br>
+        Kensington, Johannesburg<br>
+        <!-- PRINCIPLE 3: chunked, the way anyone actually recalls a number -->
+        <a class="tel-chunked" href="tel:+27115551820" data-track="cta_click" data-label="footer_phone">011 555 1820</a>
+      </address>
+    </div>
+    <nav aria-label="Footer">
+      <ul>
+        <li><a href="/subscriptions.html" data-track="nav_click" data-label="footer_subs">Subscriptions</a></li>
+        <li><a href="/about.html" data-track="nav_click" data-label="footer_about">About</a></li>
+        <li><a href="/contact.html" data-track="nav_click" data-label="footer_contact">Visit us</a></li>
+        <li><a href="/privacy.html" data-track="nav_click" data-label="footer_privacy">Privacy policy</a></li>
+      </ul>
+    </nav>
+    <div>
+      <p>Roastery open<br>Tue&ndash;Sat, 7am&ndash;3pm</p>
+      <p><a href="mailto:hello@koppieroasters.co.za" data-track="cta_click" data-label="footer_email">hello@koppieroasters.co.za</a></p>
+    </div>
+  </div>
+  <div class="wrap footer-legal">
+    <p>&copy; <span id="year">2026</span> Koppie Roasters. Fictional business, built as a template demo.</p>
+    <button type="button" class="link-btn" id="manageConsent">Cookie settings</button>
+  </div>
+</footer>
+
+<div class="consent-banner" id="consentBanner" role="dialog" aria-live="polite" aria-label="Cookie consent" hidden>
+  <p>We use cookies for anonymous analytics only. No ad tracking. <a href="/privacy.html">Privacy policy</a></p>
+  <div class="consent-actions">
+    <button type="button" class="btn btn-primary" id="consentAccept">Accept</button>
+    <button type="button" class="btn btn-ghost" id="consentDecline">Decline</button>
+  </div>
+</div>
+
+<script src="js/scripts.js" defer></script>
+<script src="js/animations.js" defer></script>
+
+</body>
+</html>

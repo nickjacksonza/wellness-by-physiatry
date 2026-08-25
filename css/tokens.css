@@ -1,0 +1,53 @@
+/* Wellness by Physiatry design tokens. Ported from the bound design system, values unchanged. */
+:root{
+--color-sage-100:#eef2dc;--color-sage-300:#cdda9a;--color-sage-500:#bbcd6f;--color-sage-600:#a3b85c;--color-sage-700:#8aa047;
+--color-forest-500:#6c8a6c;--color-forest-700:#536f58;--color-forest-800:#425844;--color-forest-900:#35462f;
+--color-sand-100:#faf3e5;--color-sand-300:#f0dcb8;--color-sand-500:#e8c58f;--color-sand-700:#c99f61;
+--color-teal-100:#e3eeee;--color-teal-300:#a8cbcc;--color-teal-500:#66a4a8;--color-teal-700:#4c8285;
+--color-gold-100:#fdf6e3;--color-gold-300:#f5e5ae;--color-gold-500:#fadd8b;--color-gold-700:#dcb84f;
+--color-mint-100:#e3fbe8;--color-mint-500:#5cff7f;--color-mint-700:#3ca653;
+--accent-vital:var(--color-mint-500);--accent-vital-strong:var(--color-mint-700);--accent-vital-bg:var(--color-mint-100);
+--color-cream:#fbf8f1;--color-white:#ffffff;
+--color-ink:#2f3a2c;--color-ink-soft:#5a6455;
+--surface-page:var(--color-cream);--surface-card:var(--color-white);--surface-brand:var(--color-sage-500);
+--surface-brand-soft:var(--color-sage-100);--surface-dark:var(--color-forest-800);
+--text-primary:var(--color-ink);--text-secondary:var(--color-ink-soft);--text-inverse:var(--color-white);
+--text-on-brand:var(--color-forest-900);--text-brand:var(--color-forest-700);
+--border-subtle:rgba(83,111,88,.16);--border-strong:rgba(83,111,88,.32);
+--link:var(--color-forest-700);--link-hover:var(--color-sage-700);
+--condition-tbi:var(--color-gold-500);--condition-tbi-bg:var(--color-gold-100);
+--condition-stroke:var(--color-sage-500);--condition-stroke-bg:var(--color-sage-100);
+--condition-concussion:var(--color-sand-500);--condition-concussion-bg:var(--color-sand-100);
+--condition-cognitive:var(--color-forest-700);--condition-cognitive-bg:#e7ede7;
+--condition-neurobehavioral:var(--color-teal-500);--condition-neurobehavioral-bg:var(--color-teal-100);
+--shadow-sm:0 2px 8px rgba(83,111,88,.08);--shadow-md:0 8px 24px rgba(83,111,88,.12);--shadow-lg:0 20px 48px rgba(83,111,88,.18);
+
+--font-display:'Newsreader',Georgia,'Times New Roman',serif;
+--font-body:'Manrope',-apple-system,'Segoe UI',sans-serif;
+--text-hero:clamp(2.75rem,6vw,5rem);
+--text-h1:clamp(2.25rem,4vw,3.5rem);
+--text-h2:clamp(1.75rem,3vw,2.5rem);
+--text-h3:clamp(1.25rem,2vw,1.5rem);
+--text-eyebrow:0.8125rem;
+--text-body-lg:1.1875rem;
+--text-body:1.0625rem;
+--text-small:0.9375rem;
+--lh-tight:1.1;
+--lh-snug:1.3;
+--lh-normal:1.6;
+--lh-relaxed:1.75;
+--tracking-eyebrow:0.14em;--tracking-wide:0.04em;
+
+--space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-5:24px;--space-6:32px;--space-7:48px;--space-8:64px;--space-9:96px;--space-10:128px;
+--container-max:1200px;--container-narrow:760px;
+
+--radius-sm:6px;--radius-md:12px;--radius-lg:20px;--radius-pill:999px;
+--radius-arch:999px 999px 0 0;
+--ease-standard:cubic-bezier(.4,0,.2,1);
+--duration-fast:150ms;
+--duration-normal:250ms;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--surface-page);color:var(--text-primary);font-family:var(--font-body);font-size:var(--text-body);line-height:var(--lh-normal)}
+a{color:var(--link);text-decoration:none}
+a:hover{color:var(--link-hover);text-decoration:underline}

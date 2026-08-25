@@ -1,0 +1,23 @@
+:root{
+--color-sage-100:#eef2dc;--color-sage-300:#cdda9a;--color-sage-500:#bbcd6f;--color-sage-600:#a3b85c;--color-sage-700:#8aa047;
+--color-forest-500:#6c8a6c;--color-forest-700:#536f58;--color-forest-800:#425844;--color-forest-900:#35462f;
+--color-sand-100:#faf3e5;--color-sand-300:#f0dcb8;--color-sand-500:#e8c58f;--color-sand-700:#c99f61;
+--color-teal-100:#e3eeee;--color-teal-300:#a8cbcc;--color-teal-500:#66a4a8;--color-teal-700:#4c8285;
+--color-gold-100:#fdf6e3;--color-gold-300:#f5e5ae;--color-gold-500:#fadd8b;--color-gold-700:#dcb84f;
+--color-mint-100:#e3fbe8;--color-mint-500:#5cff7f;--color-mint-700:#3ca653;
+--accent-vital:var(--color-mint-500);--accent-vital-strong:var(--color-mint-700);--accent-vital-bg:var(--color-mint-100);
+--color-cream:#fbf8f1;--color-white:#ffffff;
+--color-ink:#2f3a2c;--color-ink-soft:#5a6455;
+--surface-page:var(--color-cream);--surface-card:var(--color-white);--surface-brand:var(--color-sage-500);
+--surface-brand-soft:var(--color-sage-100);--surface-dark:var(--color-forest-800);
+--text-primary:var(--color-ink);--text-secondary:var(--color-ink-soft);--text-inverse:var(--color-white);
+--text-on-brand:var(--color-forest-900);--text-brand:var(--color-forest-700);
+--border-subtle:rgba(83,111,88,.16);--border-strong:rgba(83,111,88,.32);
+--link:var(--color-forest-700);--link-hover:var(--color-sage-700);
+--condition-tbi:var(--color-gold-500);--condition-tbi-bg:var(--color-gold-100);
+--condition-stroke:var(--color-sage-500);--condition-stroke-bg:var(--color-sage-100);
+--condition-concussion:var(--color-sand-500);--condition-concussion-bg:var(--color-sand-100);
+--condition-cognitive:var(--color-forest-700);--condition-cognitive-bg:#e7ede7;
+--condition-neurobehavioral:var(--color-teal-500);--condition-neurobehavioral-bg:var(--color-teal-100);
+--shadow-sm:0 2px 8px rgba(83,111,88,.08);--shadow-md:0 8px 24px rgba(83,111,88,.12);--shadow-lg:0 20px 48px rgba(83,111,88,.18);
+}

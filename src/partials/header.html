@@ -1,0 +1,20 @@
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="site-logo" href="{{ root }}index.html" data-track="nav_click" data-label="logo">
+      <img src="{{ root }}images/global/wbp-umbrella-mark-forest.png" alt="Wellness by Physiatry umbrella logo" width="54" height="40">
+      <span class="site-logo-text">Wellness <em>by</em> Physiatry</span>
+    </a>
+    <nav class="site-nav" aria-label="Main">
+      <ul class="nav-list">{{ nav_items }}</ul>
+    </nav>
+    <a class="btn btn-primary header-cta" href="{{ root }}{{ cta_href }}" data-track="cta_click" data-label="header-appointment">{{ cta_label }}</a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="mobile-drawer" aria-label="Open menu">
+      <span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span>
+    </button>
+  </div>
+  <div class="mobile-drawer" id="mobile-drawer" hidden>
+    <ul class="drawer-list">{{ nav_items }}</ul>
+    <a class="btn btn-primary drawer-cta" href="{{ root }}{{ cta_href }}" data-track="cta_click" data-label="drawer-appointment">{{ cta_label }}</a>
+  </div>
+</header>

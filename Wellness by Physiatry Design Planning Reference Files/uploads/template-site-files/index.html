@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+(function () {
+  try {
+    var stored = localStorage.getItem('theme_pref');
+    var theme = stored || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+    document.documentElement.setAttribute('data-theme', theme);
+  } catch (e) { document.documentElement.setAttribute('data-theme', 'dark'); }
+})();
+</script>
+
+<!-- Consent Mode v2 defaults, before GTM -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied',
+    analytics_storage: 'denied', functionality_storage: 'denied',
+    personalization_storage: 'denied', security_storage: 'granted',
+    wait_for_update: 500
+  });
+  (function () {
+    try {
+      var m = document.cookie.match(/(?:^|;\s*)consent_choice=(granted|denied)/);
+      if (m && m[1] === 'granted') {
+        gtag('consent', 'update', { analytics_storage: 'granted', functionality_storage: 'granted' });
+        console.log('[consent] Stored choice restored: granted');
+      } else if (m) { console.log('[consent] Stored choice restored: denied'); }
+    } catch (e) { console.warn('[consent] Restore failed', e); }
+  })();
+</script>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+
+<title>Koppie Roasters | Small-Batch Coffee Roastery, Kensington Johannesburg</title>
+<meta name="description" content="Specialty coffee roasted twice weekly in Kensington, Johannesburg. Subscriptions delivered within 48 hours of roasting. Pause or cancel any time.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#17110d">
+<link rel="canonical" href="https://www.koppieroasters.co.za/index.html">
+
+<meta name="geo.region" content="ZA-GP">
+<meta name="geo.placename" content="Johannesburg">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Koppie Roasters | Small-Batch Coffee Roastery, Kensington Johannesburg">
+<meta property="og:description" content="Specialty coffee roasted twice weekly in Kensington, Johannesburg. Subscriptions delivered within 48 hours of roasting. Pause or cancel any time.">
+<meta property="og:url" content="https://www.koppieroasters.co.za/index.html">
+<meta property="og:site_name" content="Koppie Roasters">
+<meta property="og:locale" content="en_ZA">
+<meta property="og:image" content="https://www.koppieroasters.co.za/og-image.webp">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="https://placehold.co/1600x900/2a201a/e0a75c.webp?text=Roastery" fetchpriority="high">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" href="css/styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.koppieroasters.co.za/" },
+    { "@type": "ListItem", "position": 2, "name": "Koppie Roasters", "item": "https://www.koppieroasters.co.za/index.html" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CafeOrCoffeeShop",
+  "@id": "https://www.koppieroasters.co.za/#org",
+  "name": "Koppie Roasters",
+  "url": "https://www.koppieroasters.co.za/",
+  "telephone": "+27115551820",
+  "priceRange": "R",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "44 Roberts Avenue",
+    "addressLocality": "Kensington",
+    "addressRegion": "Gauteng",
+    "addressCountry": "ZA"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": -26.1925, "longitude": 28.1092 },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday","Saturday"],
+    "opens": "07:00", "closes": "15:00"
+  }
+}
+</script>
+</head>
+
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- PRINCIPLE 1 (mental models): logo top-left linking home, primary nav
+     top-right, hamburger top-right on mobile. Every one of these is where
+     a visitor's blueprint says it should be. Nothing clever happens here
+     on purpose: this is the part that has to feel safe. -->
+<header class="site-header" id="top">
+  <div class="wrap header-inner">
+    <a class="brand" href="/" data-track="nav_click" data-label="logo">
+      <img src="https://placehold.co/48x48/2a201a/e0a75c.webp?text=K" alt="Koppie Roasters logo" width="48" height="48">
+      <span>Koppie</span>
+    </a>
+    <div class="header-actions">
+      <!-- PRINCIPLE 3 (chunking): four destinations plus one CTA. -->
+      <nav id="siteNav" class="site-nav" aria-label="Primary">
+        <ul>
+          <li><a href="/index.html" aria-current="page" data-track="nav_click" data-label="home">Home</a></li>
+          <li><a href="/subscriptions.html" data-track="nav_click" data-label="subscriptions">Subscriptions</a></li>
+          <li><a href="/about.html" data-track="nav_click" data-label="about">About</a></li>
+          <li><a href="/contact.html" data-track="nav_click" data-label="contact">Visit us</a></li>
+          <li><a class="nav-cta" href="/subscriptions.html" data-track="cta_click" data-label="nav_order">Order beans</a></li>
+        </ul>
+      </nav>
+      <button type="button" class="theme-toggle" id="themeToggle" aria-label="Switch to light theme">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"></path></svg>
+      </button>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- PRINCIPLE 1: hero reads exactly as expected. Headline says what
+       this is and where, one line of support, one primary button and one
+       secondary. No mystery, no scroll-jacking, no splash screen. -->
+  <section class="hero" data-section="hero">
+    <div class="wrap hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow">Kensington, Johannesburg</p>
+        <h1>Small-batch coffee, roasted <em>on Roberts Avenue.</em></h1>
+        <p class="lead">We roast twice a week and deliver across Joburg within 48 hours of the beans coming off the drum. No warehouse, no six-month-old stock.</p>
+        <div class="hero-actions">
+          <!-- PRINCIPLE 2: the arrow nudges forward on hover. Buttons
+               don't normally do that. Small, pleasant, not alarming. -->
+          <a class="btn btn-primary" href="/subscriptions.html" data-track="cta_click" data-label="hero_primary">Start a subscription <span class="arrow">&rarr;</span></a>
+          <a class="btn btn-ghost" href="/contact.html" data-track="cta_click" data-label="hero_secondary">Visit the roastery</a>
+        </div>
+      </div>
+      <figure class="hero-media micro-scale" data-micro="scale">
+        <img src="https://placehold.co/1600x900/2a201a/e0a75c.webp?text=Roastery"
+             alt="The Koppie Roasters drum roaster mid-batch in the Kensington roastery"
+             width="1600" height="900" fetchpriority="high" decoding="async">
+      </figure>
+    </div>
+  </section>
+
+  <!-- PRINCIPLE 3: three claims. A fourth would start pushing the first
+       one out of working memory before the visitor reaches the fold. -->
+  <section class="wrap" data-section="trust">
+    <div class="trust-bar">
+      <div class="trust-item"><strong>48 hours</strong><span>From roast to your door</span></div>
+      <div class="trust-item"><strong>6 farms</strong><span>Direct trade, named growers</span></div>
+      <div class="trust-item"><strong>1 200+</strong><span>Joburg households subscribed</span></div>
+    </div>
+  </section>
+
+  <!-- PRINCIPLE 3: three steps. Process sections are where sites usually
+       sprawl to seven bullets and lose everyone. -->
+  <section class="section" id="how" data-section="how_it_works">
+    <div class="wrap">
+      <h2>Three steps, then coffee.</h2>
+      <p class="section-intro">No account setup, no minimum term. Skip or cancel any week from the link in your delivery email.</p>
+      <div class="steps">
+        <article class="step reveal">
+          <span class="step-num" aria-hidden="true">1</span>
+          <h3>Pick a roast</h3>
+          <p>Filter, espresso or decaf. Tell us how you brew and we will match the grind, or send whole beans.</p>
+        </article>
+        <article class="step reveal">
+          <span class="step-num" aria-hidden="true">2</span>
+          <h3>Choose a rhythm</h3>
+          <p>Every week, fortnight or month. Change it whenever your habits change, which they will.</p>
+        </article>
+        <article class="step reveal">
+          <span class="step-num" aria-hidden="true">3</span>
+          <h3>We roast to order</h3>
+          <p>Your bag is roasted the morning it ships. The roast date is stamped on the base, not hidden.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRINCIPLE 3: three coffees, not the full twelve-bean range.
+       PRINCIPLE 2: each card lifts and its photo scales on hover. -->
+  <section class="section section-alt" id="coffees" data-section="coffees">
+    <div class="wrap">
+      <h2>What is on the drum this month.</h2>
+      <p class="section-intro">The range rotates with the harvest. These three are roasting now.</p>
+      <div class="grid-3">
+        <article class="card reveal">
+          <img src="https://placehold.co/800x600/342820/e0a75c.webp?text=Ethiopia" alt="Bag of Ethiopian Guji single origin beans" width="800" height="600" loading="lazy" decoding="async">
+          <h3>Guji, Ethiopia</h3>
+          <p>Peach, jasmine, black tea. A light filter roast that gets sweeter as it cools.</p>
+        </article>
+        <article class="card reveal">
+          <img src="https://placehold.co/800x600/342820/e0a75c.webp?text=Burundi" alt="Bag of Burundian Kayanza single origin beans" width="800" height="600" loading="lazy" decoding="async">
+          <h3>Kayanza, Burundi</h3>
+          <p>Red grape and cocoa. Forgiving enough for a moka pot, clean enough for a V60.</p>
+        </article>
+        <article class="card reveal">
+          <img src="https://placehold.co/800x600/342820/e0a75c.webp?text=House" alt="Bag of Koppie house espresso blend beans" width="800" height="600" loading="lazy" decoding="async">
+          <h3>Koppie House Espresso</h3>
+          <p>Brazil and Colombia. Caramel, roasted almond, and it holds up under milk.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRINCIPLE 3: three questions, in the order people actually ask
+       them. The rest live on the subscriptions page. -->
+  <section class="section" id="faq" data-section="faq">
+    <div class="wrap">
+      <h2>The three things everyone asks.</h2>
+      <div class="faq-list">
+        <details class="faq reveal">
+          <summary><h3>Do you deliver outside Johannesburg?</h3></summary>
+          <p>Yes. Joburg and Pretoria are next-day by our own driver. Everywhere else in South Africa goes by courier and lands in two to three working days.</p>
+        </details>
+        <details class="faq reveal">
+          <summary><h3>Can I pause or cancel?</h3></summary>
+          <p>Any time, from the link at the bottom of every delivery email. No phone call, no retention script, no minimum term.</p>
+        </details>
+        <details class="faq reveal">
+          <summary><h3>What if I do not like the coffee?</h3></summary>
+          <p>Tell us within a week and we will swap the bag or refund it. We would rather re-roast than have you drinking something you do not enjoy.</p>
+        </details>
+      </div>
+      <aside class="note reveal">
+        <h4>Still deciding?</h4>
+        <p>Come and taste all three at the roastery on a Saturday morning. No booking needed.</p>
+        <a class="btn btn-primary" href="/contact.html" data-track="cta_click" data-label="home_note_visit">Get directions <span class="arrow">&rarr;</span></a>
+      </aside>
+    </div>
+  </section>
+
+</main>
+<!-- PRINCIPLE 1: footer at the bottom, contact details on the left,
+     links in the middle, legal on its own line. Boring by design. -->
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <p class="brand-foot">Koppie Roasters</p>
+      <address>
+        44 Roberts Avenue<br>
+        Kensington, Johannesburg<br>
+        <!-- PRINCIPLE 3: chunked, the way anyone actually recalls a number -->
+        <a class="tel-chunked" href="tel:+27115551820" data-track="cta_click" data-label="footer_phone">011 555 1820</a>
+      </address>
+    </div>
+    <nav aria-label="Footer">
+      <ul>
+        <li><a href="/subscriptions.html" data-track="nav_click" data-label="footer_subs">Subscriptions</a></li>
+        <li><a href="/about.html" data-track="nav_click" data-label="footer_about">About</a></li>
+        <li><a href="/contact.html" data-track="nav_click" data-label="footer_contact">Visit us</a></li>
+        <li><a href="/privacy.html" data-track="nav_click" data-label="footer_privacy">Privacy policy</a></li>
+      </ul>
+    </nav>
+    <div>
+      <p>Roastery open<br>Tue&ndash;Sat, 7am&ndash;3pm</p>
+      <p><a href="mailto:hello@koppieroasters.co.za" data-track="cta_click" data-label="footer_email">hello@koppieroasters.co.za</a></p>
+    </div>
+  </div>
+  <div class="wrap footer-legal">
+    <p>&copy; <span id="year">2026</span> Koppie Roasters. Fictional business, built as a template demo.</p>
+    <button type="button" class="link-btn" id="manageConsent">Cookie settings</button>
+  </div>
+</footer>
+
+<div class="consent-banner" id="consentBanner" role="dialog" aria-live="polite" aria-label="Cookie consent" hidden>
+  <p>We use cookies for anonymous analytics only. No ad tracking. <a href="/privacy.html">Privacy policy</a></p>
+  <div class="consent-actions">
+    <button type="button" class="btn btn-primary" id="consentAccept">Accept</button>
+    <button type="button" class="btn btn-ghost" id="consentDecline">Decline</button>
+  </div>
+</div>
+
+<script src="js/scripts.js" defer></script>
+<script src="js/animations.js" defer></script>
+
+</body>
+</html>
