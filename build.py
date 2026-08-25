@@ -35,7 +35,10 @@ def parse_page(path):
         _, fm, body = text.split("---", 2)
         for line in fm.strip().splitlines():
             key, _, value = line.partition(":")
-            meta[key.strip()] = value.strip()
+            value = value.strip()
+            if len(value) >= 2 and value[0] == value[-1] and value[0] in "\"'":
+                value = value[1:-1]
+            meta[key.strip()] = value
     else:
         body = text
     return meta, body.lstrip("\n")
