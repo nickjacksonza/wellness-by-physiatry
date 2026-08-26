@@ -16,6 +16,8 @@ python build.py
 
 Generates static HTML from `src/pages/` + `src/partials/` into `docs/`, using `src/data/site.json` as the single source of truth for NAP, hours, nav, and form config. Bundles `css/tokens.css` + `css/styles.css` into one `docs/css/site.css`. No other build step, no npm.
 
+CSS/JS includes get a `?v=<content-hash>` query param computed automatically at build time (see `ASSET_VERSIONS` in `build.py`) — a content change always produces a new URL, so Cloudflare and browsers never serve a stale cached copy after a deploy, with no manual version number to remember to bump. `src/static/_headers` (Cloudflare Pages / Netlify) and `src/static/.htaccess` (the current Apache host) both cache versioned CSS/JS/images/fonts for a year and HTML pages briefly with `must-revalidate` — both ship into `docs/` on every build; only the one your host actually reads takes effect.
+
 To preview: `python -m http.server 3055` from inside `docs/`.
 
 To pick this up in a new Claude session (cloud or local Claude Code), point it at this repo and `PLAN.md` — it's written to be a self-contained spec that needs no other context.

@@ -1,0 +1,17 @@
+# Cache policy for the current Apache/cPanel host. CSS and JS are safe to
+# cache for a year because build.py fingerprints them with a content-hash
+# ?v= query param (see ASSET_VERSIONS in build.py) — a content change always
+# produces a new URL, so a long max-age never serves stale code. HTML pages
+# have no such fingerprint, so they stay short-lived and always revalidate.
+<IfModule mod_headers.c>
+  <FilesMatch "\.(css|js)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\.(avif|webp|jpe?g|png|gif|svg|woff2?)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\.html$">
+    Header set Cache-Control "public, max-age=0, must-revalidate"
+  </FilesMatch>
+  Header set X-Content-Type-Options "nosniff"
+</IfModule>

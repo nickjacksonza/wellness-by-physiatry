@@ -10,6 +10,7 @@ to each page's depth so the site works at a GitHub Pages sub-path, the
 production root domain, and from file://.
 """
 
+import hashlib
 import json
 import re
 import shutil
@@ -26,6 +27,16 @@ CSS_BUNDLE = ["css/tokens.css", "css/styles.css"]
 EXCLUDE = shutil.ignore_patterns("stock")
 
 site = json.loads((SRC / "data" / "site.json").read_text(encoding="utf-8"))
+
+# Populated in build() before any page renders, from the actual bundled/source
+# asset bytes. Used as {{ css_v }} / {{ scripts_v }} / {{ animations_v }} so a
+# content change always busts the Cloudflare/browser cache without anyone
+# having to remember to bump a version number by hand.
+ASSET_VERSIONS = {}
+
+
+def asset_version(data):
+    return hashlib.sha256(data).hexdigest()[:8]
 
 
 def parse_page(path):
@@ -89,6 +100,9 @@ def build_context(meta, out_path):
         "nav_items": nav_html(root, page_url if "/" not in page_url else ""),
         "og_image": meta.get("og_image", "images/global/og-default.png"),
         "body_class": meta.get("body_class", ""),
+        "css_v": ASSET_VERSIONS["css"],
+        "scripts_v": ASSET_VERSIONS["scripts"],
+        "animations_v": ASSET_VERSIONS["animations"],
     })
     return ctx
 
@@ -116,6 +130,11 @@ def build():
         for p in (SRC / "partials").glob("*.html")
     }
 
+    css_bundle = "\n".join((ROOT / p).read_text(encoding="utf-8") for p in CSS_BUNDLE)
+    ASSET_VERSIONS["css"] = asset_version(css_bundle.encode("utf-8"))
+    ASSET_VERSIONS["scripts"] = asset_version((ROOT / "js" / "scripts.js").read_bytes())
+    ASSET_VERSIONS["animations"] = asset_version((ROOT / "js" / "animations.js").read_bytes())
+
     pages = sorted((SRC / "pages").rglob("*.html"))
     for page in pages:
         meta, body = parse_page(page)
@@ -136,9 +155,8 @@ def build():
         out_path.write_text(render(doc, ctx), encoding="utf-8")
         print(f"  built {out_path.relative_to(ROOT)}")
 
-    bundle = "\n".join((ROOT / p).read_text(encoding="utf-8") for p in CSS_BUNDLE)
     (OUT / "css").mkdir(exist_ok=True)
-    (OUT / "css" / "site.css").write_text(bundle, encoding="utf-8")
+    (OUT / "css" / "site.css").write_text(css_bundle, encoding="utf-8")
     print(f"  bundled {len(CSS_BUNDLE)} css files -> css/site.css")
 
     for name in STATIC_DIRS:
@@ -147,7 +165,7 @@ def build():
             shutil.copytree(src_dir, OUT / name, ignore=EXCLUDE)
             print(f"  copied {name}/")
 
-    for extra in ["sitemap.xml", "robots.txt", "llms.txt"]:
+    for extra in ["sitemap.xml", "robots.txt", "llms.txt", "_headers", ".htaccess"]:
         src_file = SRC / "static" / extra
         if src_file.exists():
             shutil.copy(src_file, OUT / extra)
