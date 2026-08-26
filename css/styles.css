@@ -376,7 +376,7 @@ details.faq .faq-body p:last-child { margin-bottom: 0; }
 .form-field label { display: block; font-weight: 700; font-size: var(--text-small); margin-bottom: var(--space-2); }
 .form-field input, .form-field select, .form-field textarea { width: 100%; font: inherit; padding: 12px 14px; border: 1.5px solid var(--border-strong); border-radius: var(--radius-md); background: var(--surface-card); color: var(--text-primary); }
 .form-field input:focus-visible, .form-field select:focus-visible, .form-field textarea:focus-visible { outline: 3px solid var(--accent-vital); outline-offset: 1px; border-color: var(--color-forest-700); }
-.field-invalid { border-color: var(--color-sand-700) !important; }
+.form-field input:user-invalid, .form-field select:user-invalid, .form-field textarea:user-invalid { border-color: var(--color-sand-700); }
 .form-notice { font-size: var(--text-small); color: var(--text-secondary); }
 .honeypot { position: absolute; left: -9999px; }
 .form-success { background: var(--accent-vital-bg); border-radius: var(--radius-md); padding: var(--space-5); }

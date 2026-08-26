@@ -47,6 +47,7 @@
   /* Mobile drawer */
   var toggle = document.querySelector('.nav-toggle');
   var drawer = document.getElementById('mobile-drawer');
+  var inertTargets = document.querySelectorAll('#main, .cta-band, .site-footer');
   if (toggle && drawer) {
     toggle.addEventListener('click', function () {
       var open = toggle.getAttribute('aria-expanded') === 'true';
@@ -54,6 +55,13 @@
       toggle.setAttribute('aria-label', open ? 'Open menu' : 'Close menu');
       drawer.hidden = open;
       document.body.classList.toggle('drawer-open', !open);
+      inertTargets.forEach(function (el) { el.inert = !open; });
+      if (!open) {
+        var firstLink = drawer.querySelector('a');
+        if (firstLink) firstLink.focus();
+      } else {
+        toggle.focus();
+      }
     });
   }
 
@@ -143,15 +151,6 @@
     var started = false;
     form.addEventListener('input', function () {
       if (!started) { started = true; track('form_start', {}); }
-    });
-    form.querySelectorAll('input, select, textarea').forEach(function (field) {
-      field.addEventListener('blur', function () {
-        if (field.required && !field.checkValidity()) {
-          field.classList.add('field-invalid');
-        } else {
-          field.classList.remove('field-invalid');
-        }
-      });
     });
     form.addEventListener('submit', function (e) {
       e.preventDefault();
