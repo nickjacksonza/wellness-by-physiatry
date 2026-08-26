@@ -4,7 +4,7 @@ description: Referrals to our physical, occupational, and speech therapy partner
 og_image: images/global/og-default.png
 body_class: page-referrals
 ---
-<section class="page-hero no-media" data-section="hero">
+<section class="page-hero" data-section="hero">
   <div class="container hero-grid">
     <div class="hero-copy">
       <span class="eyebrow">Referrals and community connections</span>
@@ -14,6 +14,14 @@ body_class: page-referrals
         <a class="btn btn-primary" href="{{ root }}{{ cta_href }}" data-track="cta_click" data-label="referrals-hero-appointment">{{ cta_label }}<svg class="btn-arrow" width="16" height="12" viewBox="0 0 16 12" fill="none" aria-hidden="true"><path d="M1 6h13M10 1.5L14.5 6 10 10.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         <a class="btn btn-ghost" href="tel:{{ phone_e164 }}" data-track="cta_click" data-label="referrals-hero-phone">{{ phone }}</a>
       </div>
+    </div>
+    <div class="hero-media">
+      <figure class="hero-figure">
+        <picture>
+          <source srcset="{{ root }}images/referrals/hero-village.avif" type="image/avif">
+          <img src="{{ root }}images/referrals/hero-village.jpg" alt="A small group warmly greeting each other in a living room, one carrying a potted plant" width="800" height="1000" fetchpriority="high">
+        </picture>
+      </figure>
     </div>
   </div>
 </section>

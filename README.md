@@ -4,7 +4,7 @@ Static HTML/CSS/JS rebuild of wellnessbyphysiatry.com — see [`PLAN.md`](./PLAN
 
 Wellness by Physiatry Design Planning Reference Files.zip contains only a reference Home page html and css as a reference. Ignore the WBP-STATIC-SITE-PLAN.md in there, the PLAN.md in this github root trumps it. 
 
-**Status:** Phases 1-5 of 8 complete. All 15 pages are built and live in `docs/`, plus `privacy.html`, `accessibility.html`, and `404.html`. Phase 6 (appointment form wiring, sitemap/robots/llms.txt, final schema pass, GitHub Pages) is next — see `PLAN.md` §14 for the full build order.
+**Status:** Phases 1-6 of 8 complete. All 15 pages are built and live in `docs/`, plus `privacy.html`, `accessibility.html`, and `404.html`. The appointment form is wired to Formspree, and `sitemap.xml`/`robots.txt`/`llms.txt` are generated into `docs/`. Phase 7 (push to GitHub, ship to review) is next — see `PLAN.md` §14 for the full build order. Named referral partners on `referrals.html` stay blocked until Dr. Kopp confirms the list (`PLAN.md` §2).
 
 Every page passes an automated compliance check (no em dashes, no scope-of-practice violations, one `<h1>`, valid JSON-LD) and a link-checker (zero unresolved internal targets), and scores 100 accessibility / 100 best practices / 100 SEO on mobile Lighthouse.
 

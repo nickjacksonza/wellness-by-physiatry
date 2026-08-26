@@ -189,6 +189,26 @@ body.drawer-open { overflow: hidden; }
 .arch-figure { border-radius: var(--radius-arch); overflow: hidden; margin: 0; }
 .arch-figure img { width: 100%; height: 100%; object-fit: cover; }
 
+/* ---------- Condition marquee (Home only) ---------- */
+
+.marquee { overflow: hidden; background: var(--surface-brand-soft); padding: var(--space-4) 0; border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); }
+.marquee-track { display: flex; width: max-content; gap: var(--space-7); white-space: nowrap; }
+.marquee-track span { font-size: var(--text-eyebrow); font-weight: 700; letter-spacing: var(--tracking-eyebrow); text-transform: uppercase; color: var(--text-brand); position: relative; padding-left: var(--space-7); }
+.marquee-track span:first-child { padding-left: 0; }
+.marquee-track span:not(:first-child)::before { content: '\2022'; position: absolute; left: calc(var(--space-7) / -2); color: var(--border-strong); }
+/* Static (no scroll) under reduced motion: the two duplicated halves would
+   otherwise show as visibly repeated text with the animation switched off. */
+.marquee-track span:nth-child(n+6) { display: none; }
+@media (prefers-reduced-motion: no-preference) {
+  html.motion-ok .marquee-track span:nth-child(n+6) { display: block; }
+  html.motion-ok .marquee-track { animation: marquee-scroll 26s linear infinite; }
+  html.motion-ok .marquee:hover .marquee-track { animation-play-state: paused; }
+}
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
 /* ---------- Pillars band ---------- */
 
 .band-soft { background: var(--surface-brand-soft); }
@@ -318,7 +338,11 @@ body.drawer-open { overflow: hidden; }
 
 .managed-list { list-style: none; padding: 0; display: grid; gap: var(--space-4); max-width: var(--container-narrow); }
 .managed-list li { padding-left: var(--space-5); border-left: 2px solid var(--color-sage-500); }
+.managed-item-head { display: flex; align-items: center; gap: var(--space-2); margin-bottom: var(--space-1); }
+.managed-item-head .leaf-icon { width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0; }
 .managed-list strong { display: block; font-family: var(--font-display); font-size: var(--text-h3); font-weight: 500; color: var(--color-forest-900); margin-bottom: var(--space-1); }
+.managed-item-head strong { margin-bottom: 0; }
+.heading-leaf { width: 36px; height: 36px; border-radius: 50%; vertical-align: middle; margin-right: var(--space-3); }
 .managed-list p { margin: 0; color: var(--text-secondary); font-size: var(--text-small); }
 
 /* ---------- Testimonials ---------- */
@@ -357,6 +381,8 @@ details.faq .faq-body p:last-child { margin-bottom: 0; }
 .contact-card dt { font-weight: 700; color: var(--text-brand); }
 .contact-card dd { margin: 0; color: var(--text-secondary); }
 .contact-card .text-link { font-size: var(--text-small); }
+.map-embed { border-radius: var(--radius-md); overflow: hidden; aspect-ratio: 4 / 3; margin: 0 0 var(--space-4); border: 1px solid var(--border-subtle); }
+.map-embed iframe { width: 100%; height: 100%; border: 0; display: block; }
 
 /* ---------- CTA band ---------- */
 
