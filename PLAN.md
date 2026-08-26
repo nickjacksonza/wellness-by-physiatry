@@ -1,9 +1,10 @@
 # Wellness by Physiatry — Static Site Build Plan
 
-**Version:** 2.0 — the build spec. Supersedes v1.1; all prior open questions are now either resolved or reduced to the five sign-off items in §2.
+**Status: built and live.** Phases 1–6 of §14's build order are complete — all 15 pages built, form wired, sitemap/robots/schema in place, 100/100/100/100 Lighthouse (mobile) on every page checked. This document now doubles as the maintenance reference — see §16 for how to make changes and redeploy. Everything below Phase 6 in §14, and the sign-off list in §2, is what's still genuinely open.
+**Version:** 2.0 — the build spec. Supersedes v1.1; all prior open questions are now either resolved or reduced to the sign-off items in §2.
 **Owner:** Dr. Fabiolla Kopp / Wellness by Physiatry
 **Canonical domain:** `wellnessbyphysiatry.com`
-**Review build:** GitHub repo → GitHub Pages, for the Friday review.
+**Review build:** GitHub repo (`nickjacksonza/wellness-by-physiatry`) → currently mirrored via SFTP to `projects.slash301.com/Clients/WbP/` for review; GitHub Pages / production move is Phase 7–8, not yet done.
 **Replaces:** the Framer site (`receptive-look-689612.framer.app`) and the Elementor build (`projects.slash301.com/Clients/WellnessPhys/`).
 
 ## 0. What this document is
@@ -513,5 +514,26 @@ Phase 3 is the one that matters. Get Home genuinely right and phases 4–5 are m
 - [ ] No broken links; 404 offers two clear ways back
 - [ ] Relative paths verified — site works at both the Pages sub-path and the root domain
 - [ ] Mobile 360px through desktop 1920px, no horizontal scroll
+
+---
+
+## 16. Maintenance and redeploying
+
+The site is built. This section is for whoever (human or AI session) comes back to change something — read this before re-deriving any of it from scratch.
+
+**Making a content or config change:**
+- NAP, phone, fax, hours, nav, Formspree ID, GA4/GTM IDs: one edit in `src/data/site.json`, propagates everywhere.
+- Page copy: edit the relevant file in `src/pages/` (front-matter + body only — partials wrap it automatically).
+- Shared chrome (header, footer, CTA band): edit `src/partials/`.
+- Design tokens / component styles: `css/tokens.css` / `css/styles.css` (source — never edit `docs/css/site.css` directly, it's generated).
+- After any change: `python build.py` from the repo root. It regenerates all 17 files in `docs/`, re-bundles CSS, and recomputes the `?v=` cache-busting hash on `site.css`/`scripts.js`/`animations.js` automatically — no manual version bump needed.
+
+**Redeploying:**
+1. `git add -A && git commit -m "..."`, then `git push` to `nickjacksonza/wellness-by-physiatry` (only when Nick asks — never auto-commit or auto-push).
+2. For the SFTP review mirror at `projects.slash301.com/Clients/WbP/`: upload the changed files under `docs/` to `public_html/projects.slash301.com/Clients/WbP/` on host-h.net (flat structure — the contents of `docs/`, not the folder itself). See the repo root `CLAUDE.md`'s Deployment section and the Claude Code memory note `host-h-net-ftp-notes` for this account's specific quirks (an 8-connection cap, and passive-mode FTP failing from Nick's home network — active mode works). Only ask Nick for exact paths/credentials if something about the target has changed since; don't guess or loop through workarounds first.
+3. A change not showing up after deploy is very likely Cloudflare's edge cache serving the old file, not a failed upload — fetch with a throwaway query string (`?cb=1`) to check the origin directly before assuming the deploy failed.
+4. Phase 7–8 (GitHub Pages / production domain move via Cloudflare Pages or Netlify) is still ahead — see §14 and §3's Deployment note. When that happens, `src/static/_headers` already ships the right cache headers for either platform; `src/static/.htaccess` covers the current Apache host.
+
+**What's still actually open:** the sign-off list in §2 (each item is a one-field change once answered — don't re-litigate settled ones, just check §2 for current status) and the post-Phase-5 sanity pass in §4. As of this update: Veronica's title and the contact email are confirmed against the copy doc and need no further checking. One content gap found comparing the site against the copy doc: the Physiatry & PM&R page doesn't cover "Wholecare Family Health Planning" from the doc's outline for that page — worth a line if that page gets revisited, though the copy doc itself never had drafted body text for this page either, so there was nothing to port verbatim in the first place.
 - [ ] Lighthouse ≥95 performance / 100 accessibility on mobile
 - [ ] 301s from every old Framer path
