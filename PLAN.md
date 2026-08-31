@@ -191,7 +191,7 @@ Always **East Loop** and **Lincoln Park**. Never "Downtown", never "North Side" 
 | | East Loop | Lincoln Park |
 |---|---|---|
 | Address | 30 N Michigan Ave, Chicago, IL 60602 | 2555 N Southport Ave, Chicago, IL 60614 |
-| Hours | 8am–4pm Wednesdays & Fridays | 8am–4pm Tuesdays & Thursdays |
+| Hours | 8am–4pm Tuesdays & Fridays | 8am–4pm Thursdays (by request) |
 | Parking | Millennium Parking Garage, Grant Park North Entrance, 25 N Michigan Ave ($14 up to 5 hours with validation) | Street parking |
 | Transit | Red Line to Lake/Washington, or Green Line to Washington/Wabash | Red Line to Fullerton, or 74 bus to Fullerton & Southport |
 
