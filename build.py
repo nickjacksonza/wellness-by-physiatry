@@ -7,7 +7,9 @@ Reads src/pages/**.html (front-matter + body), wraps them in src/partials/,
 resolves {{ placeholders }} from site.json + front-matter, and writes plain
 static HTML to docs/. All internal links and asset paths are written relative
 to each page's depth so the site works at a GitHub Pages sub-path, the
-production root domain, and from file://.
+production root domain. Links to the home page use the directory ("./" or
+"../") so they match its canonical URL; opening docs/ via file:// therefore lists
+a folder for those links, so preview with a local server.
 """
 
 import hashlib
@@ -60,18 +62,26 @@ def rel_prefix(out_path):
     return "../" * depth
 
 
+def link(root, href):
+    """Relative link to a page. The home page links to the directory ("./" or
+    "../"), not index.html, so internal links point at the canonical URL."""
+    if href == "index.html":
+        return root or "./"
+    return f"{root}{href}"
+
+
 def nav_html(root, current):
     items = []
     for item in site["nav"]:
         active = ' aria-current="page"' if item["href"] == current else ""
         if "children" in item:
             links = "".join(
-                f'<li><a href="{root}{c["href"]}" data-track="nav_click">{c["label"]}</a></li>'
+                f'<li><a href="{link(root, c["href"])}" data-track="nav_click">{c["label"]}</a></li>'
                 for c in item["children"]
             )
             items.append(
                 f'<li class="nav-item has-dropdown">'
-                f'<a href="{root}{item["href"]}" data-track="nav_click"{active}>{item["label"]}</a>'
+                f'<a href="{link(root, item["href"])}" data-track="nav_click"{active}>{item["label"]}</a>'
                 f'<button class="nav-caret" aria-expanded="false" aria-label="Open {item["label"]} menu">'
                 f'<svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>'
                 f'</button>'
@@ -79,7 +89,7 @@ def nav_html(root, current):
             )
         else:
             items.append(
-                f'<li class="nav-item"><a href="{root}{item["href"]}" data-track="nav_click"{active}>{item["label"]}</a></li>'
+                f'<li class="nav-item"><a href="{link(root, item["href"])}" data-track="nav_click"{active}>{item["label"]}</a></li>'
             )
     return "".join(items)
 
@@ -112,6 +122,7 @@ def build_context(meta, out_path):
                 ctx[f"loc{i}_{key}"] = value
     ctx.update({
         "root": root,
+        "home": root or "./",
         "canonical": canonical,
         "nav_items": nav_html(root, page_url if "/" not in page_url else ""),
         "og_image": meta.get("og_image", "images/global/og-default.png"),
