@@ -165,7 +165,7 @@ def build():
             shutil.copytree(src_dir, OUT / name, ignore=EXCLUDE)
             print(f"  copied {name}/")
 
-    for extra in ["sitemap.xml", "robots.txt", "llms.txt", "_headers", ".htaccess"]:
+    for extra in ["sitemap.xml", "robots.txt", "llms.txt", "_headers", ".htaccess", "CNAME"]:
         src_file = SRC / "static" / extra
         if src_file.exists():
             shutil.copy(src_file, OUT / extra)
