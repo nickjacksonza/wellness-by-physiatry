@@ -26,6 +26,7 @@ PHOTOS = {
     "images/team/dr-f-kopp-portrait": [320, 480],
     "images/team/dr-f-kopp-card": [320],
     "images/referrals/hero-village": [320, 480, 640],
+    "images/contact/hero-train": [320, 480, 640],
     "images/faq/hero-leaves": [320, 480, 640],
     "images/patient-resources/hero-leaf": [320, 480, 640],
     "images/patient-resources/support-couch": [320, 480],
