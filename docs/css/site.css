@@ -127,17 +127,19 @@ p a:not(.btn):not(.text-link) { text-decoration: underline; text-underline-offse
 
 .site-nav { margin-left: auto; }
 .nav-list { display: flex; align-items: center; gap: var(--space-2); list-style: none; margin: 0; padding: 0; }
-.nav-item { position: relative; }
-.nav-item > a { display: inline-block; padding: var(--space-2) var(--space-3); font-size: var(--text-small); font-weight: 600; color: var(--text-primary); position: relative; }
+.nav-item { position: relative; display: flex; align-items: center; }
+.nav-item > a { display: inline-block; padding: var(--space-2) var(--space-3); font-size: var(--text-small); font-weight: 600; color: var(--text-primary); position: relative; white-space: nowrap; }
 .nav-item > a::after { content: ''; position: absolute; left: 50%; right: 50%; bottom: 2px; height: 2px; background: var(--color-sage-700); transition: left 200ms var(--ease-standard), right 200ms var(--ease-standard); }
 .nav-item > a:hover { text-decoration: none; color: var(--color-forest-900); }
 .nav-item > a:hover::after, .nav-item > a[aria-current="page"]::after { left: var(--space-3); right: var(--space-3); }
-.nav-caret { background: none; border: 0; padding: var(--space-1); color: var(--text-secondary); cursor: pointer; vertical-align: middle; }
+.nav-caret { background: none; border: 0; padding: 0; min-width: 44px; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; color: var(--text-secondary); cursor: pointer; vertical-align: middle; }
 .nav-caret svg { transition: transform var(--duration-fast) var(--ease-standard); }
 .has-dropdown.open .nav-caret svg { transform: rotate(180deg); }
-.nav-dropdown { position: absolute; top: 100%; left: 0; min-width: 240px; background: var(--surface-card); border-radius: var(--radius-md); box-shadow: var(--shadow-lg); border: 1px solid var(--border-subtle); list-style: none; margin: var(--space-2) 0 0; padding: var(--space-2); display: none; }
-.has-dropdown.open .nav-dropdown, .has-dropdown:focus-within .nav-dropdown { display: block; }
-@media (hover: hover) { .has-dropdown:hover .nav-dropdown { display: block; } }
+.nav-dropdown { position: absolute; top: 100%; left: 0; min-width: 240px; background: var(--surface-card); border-radius: var(--radius-md); box-shadow: var(--shadow-lg); border: 1px solid var(--border-subtle); list-style: none; margin: var(--space-2) 0 0; padding: var(--space-2); opacity: 0; visibility: hidden; transition: opacity 150ms var(--ease-standard) 300ms, visibility 0s linear 300ms; }
+/* Invisible bridge over the margin gap, so the pointer can travel from the trigger into the menu. */
+.nav-dropdown::before { content: ''; position: absolute; left: 0; right: 0; top: calc(-1 * var(--space-2)); height: var(--space-2); }
+.has-dropdown.open .nav-dropdown, .has-dropdown:focus-within .nav-dropdown { opacity: 1; visibility: visible; transition-delay: 0s; }
+@media (hover: hover) { .has-dropdown:hover .nav-dropdown { opacity: 1; visibility: visible; transition-delay: 0s; } }
 .nav-dropdown a { display: block; padding: var(--space-2) var(--space-3); border-radius: var(--radius-sm); font-size: var(--text-small); font-weight: 500; }
 .nav-dropdown a:hover { background: var(--surface-brand-soft); text-decoration: none; color: var(--color-forest-900); }
 
@@ -150,8 +152,9 @@ p a:not(.btn):not(.text-link) { text-decoration: underline; text-underline-offse
 
 .mobile-drawer { border-top: 1px solid var(--border-subtle); background: var(--surface-page); padding: var(--space-4) var(--space-5) var(--space-6); }
 .drawer-list { list-style: none; margin: 0 0 var(--space-5); padding: 0; }
-.drawer-list .nav-item > a { display: block; padding: var(--space-3) 0; font-size: var(--text-body); }
-.drawer-list .nav-dropdown { position: static; display: none; box-shadow: none; border: 0; background: var(--surface-brand-soft); border-radius: var(--radius-md); margin: 0 0 var(--space-2); }
+.drawer-list .nav-item { flex-wrap: wrap; }
+.drawer-list .nav-item > a { display: block; flex: 1; padding: var(--space-3) 0; font-size: var(--text-body); }
+.drawer-list .nav-dropdown { position: static; display: none; flex-basis: 100%; opacity: 1; visibility: visible; transition: none; box-shadow: none; border: 0; background: var(--surface-brand-soft); border-radius: var(--radius-md); margin: 0 0 var(--space-2); }
 .drawer-list .has-dropdown.open .nav-dropdown { display: block; }
 .drawer-cta { width: 100%; justify-content: center; }
 
