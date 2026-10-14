@@ -143,7 +143,7 @@ p a:not(.btn):not(.text-link) { text-decoration: underline; text-underline-offse
 .nav-dropdown a { display: block; padding: var(--space-2) var(--space-3); border-radius: var(--radius-sm); font-size: var(--text-small); font-weight: 500; }
 .nav-dropdown a:hover { background: var(--surface-brand-soft); text-decoration: none; color: var(--color-forest-900); }
 
-.header-cta { padding: 11px 22px; }
+.header-cta { padding: 11px 22px; white-space: nowrap; }
 .nav-toggle { display: none; background: none; border: 0; padding: var(--space-2); cursor: pointer; }
 .nav-toggle-bar { display: block; width: 24px; height: 2px; background: var(--color-forest-900); margin: 5px 0; border-radius: 2px; transition: transform var(--duration-fast) var(--ease-standard), opacity var(--duration-fast) var(--ease-standard); }
 .nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
@@ -158,11 +158,15 @@ p a:not(.btn):not(.text-link) { text-decoration: underline; text-underline-offse
 .drawer-list .has-dropdown.open .nav-dropdown { display: block; }
 .drawer-cta { width: 100%; justify-content: center; }
 
-@media (max-width: 960px) {
+@media (max-width: 1024px) {
   .site-nav, .header-cta { display: none; }
   .nav-toggle { display: block; margin-left: auto; }
 }
-@media (min-width: 961px) { .mobile-drawer { display: none; } }
+@media (min-width: 1025px) and (max-width: 1180px) {
+  .nav-list { gap: 0; }
+  .nav-item > a { padding-left: var(--space-2); padding-right: var(--space-2); }
+}
+@media (min-width: 1025px) { .mobile-drawer { display: none; } }
 body.drawer-open { overflow: hidden; }
 
 /* ---------- Hero ---------- */
@@ -345,7 +349,7 @@ body.drawer-open { overflow: hidden; }
 .managed-item-head .leaf-icon { width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0; }
 .managed-list strong { display: block; font-family: var(--font-display); font-size: var(--text-h3); font-weight: 500; color: var(--color-forest-900); margin-bottom: var(--space-1); }
 .managed-item-head strong { margin-bottom: 0; }
-.heading-leaf { width: 36px; height: 36px; border-radius: 50%; vertical-align: middle; margin-right: var(--space-3); }
+.heading-leaf { display: inline-block; width: 36px; height: 36px; border-radius: 50%; vertical-align: middle; margin-right: var(--space-3); }
 .managed-list p { margin: 0; color: var(--text-secondary); font-size: var(--text-small); }
 
 /* ---------- Testimonials ---------- */
