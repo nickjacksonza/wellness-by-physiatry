@@ -84,6 +84,22 @@ def nav_html(root, current):
     return "".join(items)
 
 
+# Fonts used above the fold, preloaded so they download alongside site.css
+# instead of after it. The home hero uses Newsreader 400 + italic; inner page
+# heroes use Newsreader 500. Manrope 400/600/700 covers body, nav and buttons.
+FONTS_COMMON = ["manrope-latin-400", "manrope-latin-600", "manrope-latin-700"]
+FONTS_HOME = ["newsreader-latin-400", "newsreader-latin-400-italic"]
+FONTS_INNER = ["newsreader-latin-500"]
+
+
+def font_preloads(root, is_home):
+    names = (FONTS_HOME if is_home else FONTS_INNER) + FONTS_COMMON
+    return "\n".join(
+        f'<link rel="preload" href="{root}fonts/{n}.woff2" as="font" type="font/woff2" crossorigin>'
+        for n in names
+    )
+
+
 def build_context(meta, out_path):
     root = rel_prefix(out_path)
     page_url = out_path.relative_to(OUT).as_posix()
@@ -100,6 +116,7 @@ def build_context(meta, out_path):
         "nav_items": nav_html(root, page_url if "/" not in page_url else ""),
         "og_image": meta.get("og_image", "images/global/og-default.png"),
         "body_class": meta.get("body_class", ""),
+        "font_preloads": font_preloads(root, page_url == "index.html"),
         "css_v": ASSET_VERSIONS["css"],
         "scripts_v": ASSET_VERSIONS["scripts"],
         "animations_v": ASSET_VERSIONS["animations"],
