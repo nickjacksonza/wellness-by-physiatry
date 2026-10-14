@@ -18,8 +18,8 @@ body_class: page-team
     <div class="hero-media">
       <figure class="hero-figure">
         <picture>
-          <source srcset="{{ root }}images/team/dr-f-kopp-portrait.avif" type="image/avif">
-          <img src="{{ root }}images/team/dr-f-kopp-portrait.jpg" alt="Dr Fabiolla Kopp in a navy blazer and stethoscope, smiling" width="800" height="1000" fetchpriority="high">
+          <source type="image/avif" srcset="{{ root }}images/team/dr-f-kopp-portrait-320w.avif 320w, {{ root }}images/team/dr-f-kopp-portrait-480w.avif 480w, {{ root }}images/team/dr-f-kopp-portrait.avif 640w" sizes="(min-width: 1100px) 552px, (min-width: 700px) 600px, calc(100vw - 48px)">
+          <img src="{{ root }}images/team/dr-f-kopp-portrait.jpg" alt="Dr Fabiolla Kopp in a navy blazer and stethoscope, smiling" width="800" height="1000" fetchpriority="high" srcset="{{ root }}images/team/dr-f-kopp-portrait-320w.jpg 320w, {{ root }}images/team/dr-f-kopp-portrait-480w.jpg 480w, {{ root }}images/team/dr-f-kopp-portrait.jpg 640w" sizes="(min-width: 1100px) 552px, (min-width: 700px) 600px, calc(100vw - 48px)">
         </picture>
       </figure>
     </div>
@@ -41,8 +41,8 @@ body_class: page-team
       <div class="team-card reveal">
         <div class="team-photo">
           <picture>
-            <source srcset="{{ root }}images/team/dr-f-kopp-card.avif" type="image/avif">
-            <img src="{{ root }}images/team/dr-f-kopp-card.jpg" alt="Dr Fabiolla Kopp in a navy blazer and stethoscope, smiling" width="480" height="600" loading="lazy">
+            <source type="image/avif" srcset="{{ root }}images/team/dr-f-kopp-card-320w.avif 320w, {{ root }}images/team/dr-f-kopp-card.avif 480w" sizes="120px">
+            <img src="{{ root }}images/team/dr-f-kopp-card.jpg" alt="Dr Fabiolla Kopp in a navy blazer and stethoscope, smiling" width="480" height="600" loading="lazy" srcset="{{ root }}images/team/dr-f-kopp-card-320w.jpg 320w, {{ root }}images/team/dr-f-kopp-card.jpg 480w" sizes="120px">
           </picture>
         </div>
         <div>

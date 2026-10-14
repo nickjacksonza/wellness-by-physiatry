@@ -18,8 +18,8 @@ body_class: page-about
     <div class="hero-media">
       <figure class="hero-figure">
         <picture>
-          <source srcset="{{ root }}images/about/hero-canopy.avif" type="image/avif">
-          <img src="{{ root }}images/about/hero-canopy.jpg" alt="Looking up into the green canopy of a large tree" width="800" height="1000" fetchpriority="high">
+          <source type="image/avif" srcset="{{ root }}images/about/hero-canopy-320w.avif 320w, {{ root }}images/about/hero-canopy-480w.avif 480w, {{ root }}images/about/hero-canopy-640w.avif 640w, {{ root }}images/about/hero-canopy.avif 800w" sizes="(min-width: 1100px) 552px, (min-width: 700px) 600px, calc(100vw - 48px)">
+          <img src="{{ root }}images/about/hero-canopy.jpg" alt="Looking up into the green canopy of a large tree" width="800" height="1000" fetchpriority="high" srcset="{{ root }}images/about/hero-canopy-320w.jpg 320w, {{ root }}images/about/hero-canopy-480w.jpg 480w, {{ root }}images/about/hero-canopy-640w.jpg 640w, {{ root }}images/about/hero-canopy.jpg 800w" sizes="(min-width: 1100px) 552px, (min-width: 700px) 600px, calc(100vw - 48px)">
         </picture>
       </figure>
     </div>
@@ -86,8 +86,8 @@ body_class: page-about
       <div class="team-card reveal">
         <div class="team-photo">
           <picture>
-            <source srcset="{{ root }}images/team/dr-f-kopp-card.avif" type="image/avif">
-            <img src="{{ root }}images/team/dr-f-kopp-card.jpg" alt="Dr Fabiolla Kopp in a navy blazer and stethoscope, smiling" width="480" height="600" loading="lazy">
+            <source type="image/avif" srcset="{{ root }}images/team/dr-f-kopp-card-320w.avif 320w, {{ root }}images/team/dr-f-kopp-card.avif 480w" sizes="120px">
+            <img src="{{ root }}images/team/dr-f-kopp-card.jpg" alt="Dr Fabiolla Kopp in a navy blazer and stethoscope, smiling" width="480" height="600" loading="lazy" srcset="{{ root }}images/team/dr-f-kopp-card-320w.jpg 320w, {{ root }}images/team/dr-f-kopp-card.jpg 480w" sizes="120px">
           </picture>
         </div>
         <div>
