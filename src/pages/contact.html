@@ -5,7 +5,7 @@ og_image: images/global/og-default.png
 body_class: page-contact
 cta_band: "false"
 ---
-<section class="page-hero no-media" data-section="hero">
+<section class="page-hero" data-section="hero">
   <div class="container hero-grid">
     <div class="hero-copy">
       <span class="eyebrow">Contact us</span>
@@ -15,6 +15,14 @@ cta_band: "false"
         <a class="btn btn-primary" href="#appointment" data-track="cta_click" data-label="contact-hero-appointment">Request an appointment</a>
         <a class="btn btn-ghost" href="tel:{{ phone_e164 }}" data-track="cta_click" data-label="contact-hero-phone">{{ phone }}</a>
       </div>
+    </div>
+    <div class="hero-media">
+      <figure class="hero-figure">
+        <picture>
+          <source type="image/avif" srcset="{{ root }}images/contact/hero-train-320w.avif 320w, {{ root }}images/contact/hero-train-480w.avif 480w, {{ root }}images/contact/hero-train-640w.avif 640w, {{ root }}images/contact/hero-train.avif 800w" sizes="(min-width: 1100px) 552px, (min-width: 700px) 600px, calc(100vw - 48px)">
+          <img src="{{ root }}images/contact/hero-train.jpg" alt="An elevated train curving between glass towers in downtown Chicago at sunset" width="800" height="1000" fetchpriority="high" srcset="{{ root }}images/contact/hero-train-320w.jpg 320w, {{ root }}images/contact/hero-train-480w.jpg 480w, {{ root }}images/contact/hero-train-640w.jpg 640w, {{ root }}images/contact/hero-train.jpg 800w" sizes="(min-width: 1100px) 552px, (min-width: 700px) 600px, calc(100vw - 48px)">
+        </picture>
+      </figure>
     </div>
   </div>
 </section>
@@ -49,46 +57,54 @@ cta_band: "false"
       <h2>Request an appointment</h2>
       <p class="subtitle">Fill in the fields below and our team will follow up to confirm your first visit.</p>
     </div>
-    <form class="appointment-form" action="https://formspree.io/f/{{ formspree_id }}" method="POST">
-      <div class="form-field">
-        <label for="f-name">Name</label>
-        <input type="text" id="f-name" name="name" required autocomplete="name">
-      </div>
-      <div class="form-field">
-        <label for="f-phone">Phone</label>
-        <input type="tel" id="f-phone" name="phone" required autocomplete="tel">
-      </div>
-      <div class="form-field">
-        <label for="f-email">Email</label>
-        <input type="email" id="f-email" name="email" required autocomplete="email">
-      </div>
-      <div class="form-field">
-        <label for="f-location">Preferred location</label>
-        <select id="f-location" name="preferred_location" required>
-          <option value="">Choose one</option>
-          <option value="East Loop (Michigan Ave)">East Loop (Michigan Ave)</option>
-          <option value="Lincoln Park (Southport Ave)">Lincoln Park (Southport Ave)</option>
-          <option value="Either">Either</option>
-        </select>
-      </div>
-      <div class="form-field">
-        <label for="f-status">New or existing patient</label>
-        <select id="f-status" name="patient_status" required>
-          <option value="">Choose one</option>
-          <option value="New patient">New patient</option>
-          <option value="Existing patient">Existing patient</option>
-        </select>
-      </div>
-      <div class="form-field">
-        <label for="f-message">How can we help?</label>
-        <textarea id="f-message" name="message" rows="4" required></textarea>
-        <p class="form-notice">Please don't include medical details in this form.</p>
-      </div>
-      <input type="text" name="_gotcha" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
-      <button type="submit" class="btn btn-primary">Submit request<svg class="btn-arrow" width="16" height="12" viewBox="0 0 16 12" fill="none" aria-hidden="true"><path d="M1 6h13M10 1.5L14.5 6 10 10.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-      <p class="form-success" id="form-success" hidden tabindex="-1">Thank you. Our team will be in touch shortly to confirm your visit.</p>
-      <p class="form-notice" id="form-error" hidden>Something went wrong sending your request. Please call us at <a href="tel:{{ phone_e164 }}">{{ phone }}</a> instead.</p>
-    </form>
+    <div class="form-layout">
+      <form class="appointment-form" action="https://formspree.io/f/{{ formspree_id }}" method="POST">
+        <div class="form-field">
+          <label for="f-name">Name</label>
+          <input type="text" id="f-name" name="name" required autocomplete="name">
+        </div>
+        <div class="form-field">
+          <label for="f-phone">Phone</label>
+          <input type="tel" id="f-phone" name="phone" required autocomplete="tel">
+        </div>
+        <div class="form-field">
+          <label for="f-email">Email</label>
+          <input type="email" id="f-email" name="email" required autocomplete="email">
+        </div>
+        <div class="form-field">
+          <label for="f-location">Preferred location</label>
+          <select id="f-location" name="preferred_location" required>
+            <option value="">Choose one</option>
+            <option value="East Loop (Michigan Ave)">East Loop (Michigan Ave)</option>
+            <option value="Lincoln Park (Southport Ave)">Lincoln Park (Southport Ave)</option>
+            <option value="Either">Either</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="f-status">New or existing patient</label>
+          <select id="f-status" name="patient_status" required>
+            <option value="">Choose one</option>
+            <option value="New patient">New patient</option>
+            <option value="Existing patient">Existing patient</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="f-message">How can we help?</label>
+          <textarea id="f-message" name="message" rows="4" required></textarea>
+          <p class="form-notice">Please don't include medical details in this form.</p>
+        </div>
+        <input type="text" name="_gotcha" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button type="submit" class="btn btn-primary">Submit request<svg class="btn-arrow" width="16" height="12" viewBox="0 0 16 12" fill="none" aria-hidden="true"><path d="M1 6h13M10 1.5L14.5 6 10 10.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <p class="form-success" id="form-success" hidden tabindex="-1">Thank you. Our team will be in touch shortly to confirm your visit.</p>
+        <p class="form-notice" id="form-error" hidden>Something went wrong sending your request. Please call us at <a href="tel:{{ phone_e164 }}">{{ phone }}</a> instead.</p>
+      </form>
+      <figure class="arch-figure form-figure reveal">
+        <picture>
+          <source type="image/avif" srcset="{{ root }}images/contact/park-path-320w.avif 320w, {{ root }}images/contact/park-path-480w.avif 480w, {{ root }}images/contact/park-path.avif 600w" sizes="(min-width: 900px) 360px, 320px">
+          <img src="{{ root }}images/contact/park-path.jpg" alt="A person walking along a tree-lined path in a Chicago park, with a skyline tower in the distance, in black and white" width="600" height="750" loading="lazy" srcset="{{ root }}images/contact/park-path-320w.jpg 320w, {{ root }}images/contact/park-path-480w.jpg 480w, {{ root }}images/contact/park-path.jpg 600w" sizes="(min-width: 900px) 360px, 320px">
+        </picture>
+      </figure>
+    </div>
   </div>
 </section>
 
