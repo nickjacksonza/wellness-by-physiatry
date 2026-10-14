@@ -18,8 +18,8 @@ body_class: page-referrals
     <div class="hero-media">
       <figure class="hero-figure">
         <picture>
-          <source srcset="{{ root }}images/referrals/hero-village.avif" type="image/avif">
-          <img src="{{ root }}images/referrals/hero-village.jpg" alt="A small group warmly greeting each other in a living room, one carrying a potted plant" width="800" height="1000" fetchpriority="high">
+          <source type="image/avif" srcset="{{ root }}images/referrals/hero-village-320w.avif 320w, {{ root }}images/referrals/hero-village-480w.avif 480w, {{ root }}images/referrals/hero-village-640w.avif 640w, {{ root }}images/referrals/hero-village.avif 800w" sizes="(min-width: 1100px) 552px, (min-width: 700px) 600px, calc(100vw - 48px)">
+          <img src="{{ root }}images/referrals/hero-village.jpg" alt="A small group warmly greeting each other in a living room, one carrying a potted plant" width="800" height="1000" fetchpriority="high" srcset="{{ root }}images/referrals/hero-village-320w.jpg 320w, {{ root }}images/referrals/hero-village-480w.jpg 480w, {{ root }}images/referrals/hero-village-640w.jpg 640w, {{ root }}images/referrals/hero-village.jpg 800w" sizes="(min-width: 1100px) 552px, (min-width: 700px) 600px, calc(100vw - 48px)">
         </picture>
       </figure>
     </div>
