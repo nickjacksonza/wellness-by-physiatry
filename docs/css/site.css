@@ -444,6 +444,9 @@ details.faq .faq-body p:last-child { margin-bottom: 0; }
 /* ---------- Forms ---------- */
 
 .appointment-form { max-width: 560px; }
+.form-layout { display: grid; gap: var(--space-7); align-items: start; }
+.form-layout .arch-figure { aspect-ratio: 4 / 5; max-width: 320px; box-shadow: var(--shadow-md); }
+@media (min-width: 900px) { .form-layout { grid-template-columns: minmax(0, 560px) minmax(0, 360px); gap: var(--space-8); } .form-layout .arch-figure { max-width: 360px; position: sticky; top: var(--space-8); } }
 .form-field { margin-bottom: var(--space-5); }
 .form-field label { display: block; font-weight: 700; font-size: var(--text-small); margin-bottom: var(--space-2); }
 .form-field input, .form-field select, .form-field textarea { width: 100%; font: inherit; padding: 12px 14px; border: 1.5px solid var(--border-strong); border-radius: var(--radius-md); background: var(--surface-card); color: var(--text-primary); }
