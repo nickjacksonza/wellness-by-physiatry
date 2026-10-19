@@ -1,6 +1,6 @@
 # Wellness by Physiatry
 
-> Physiatry (physical medicine and rehabilitation) clinic in Chicago, Illinois, led by Dr. Fabiolla Kopp, MD. Treats traumatic brain injury (TBI), stroke, concussion, and the cognitive and neurobehavioral changes that can follow a brain injury, without surgery. Care combines medical treatment with lifestyle medicine and therapeutic coaching. Multilingual: English, Español, Português.
+> Physiatry (physical medicine and rehabilitation) clinic in Chicago, Illinois, led by Dr. Fabiolla Kopp, MD. Cares for survivors of any type of brain injury or acquired brain condition, including traumatic brain injury (TBI), stroke, dementia, encephalopathy, diffuse axonal injury, anoxic brain injury, and concussion, without surgery. Brain injury medicine is a subspecialty of physiatry (PM&R). The family is part of the care. Care combines medical treatment with lifestyle medicine and therapeutic coaching. Multilingual: English, Español, Português.
 
 Two Chicago locations: East Loop (30 N Michigan Ave) and Lincoln Park (2555 N Southport Ave). Phone (773) 312-4423.
 
@@ -11,7 +11,7 @@ Two Chicago locations: East Loop (30 N Michigan Ave) and Lincoln Park (2555 N So
 - [Mission](https://wellnessbyphysiatry.com/mission.html): mission and vision
 - [Team](https://wellnessbyphysiatry.com/team.html): Dr. Fabiolla Kopp and clinic staff
 - [Services overview](https://wellnessbyphysiatry.com/services.html)
-- [Brain injury rehabilitation](https://wellnessbyphysiatry.com/services/brain-injury-rehabilitation.html): TBI, stroke, anoxic brain injury, memory and behavior changes
+- [Brain injury rehabilitation](https://wellnessbyphysiatry.com/services/brain-injury-rehabilitation.html): brain injury and neurological conditions: TBI, stroke, dementia, encephalopathy, diffuse axonal injury, anoxic brain injury, memory and behavior changes
 - [Concussion management](https://wellnessbyphysiatry.com/services/concussion-management.html)
 - [Lifestyle medicine](https://wellnessbyphysiatry.com/services/lifestyle-medicine.html)
 - [Physiatry / PM&R](https://wellnessbyphysiatry.com/services/physiatry-pmr.html)

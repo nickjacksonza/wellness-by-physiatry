@@ -62,7 +62,7 @@
       "href": "services.html",
       "children": [
         { "label": "Overview", "href": "services.html" },
-        { "label": "Brain Trauma & Stroke", "href": "services/brain-injury-rehabilitation.html" },
+        { "label": "Brain Injury & Neurological Conditions", "href": "services/brain-injury-rehabilitation.html" },
         { "label": "Concussion Management", "href": "services/concussion-management.html" },
         { "label": "Lifestyle Medicine", "href": "services/lifestyle-medicine.html" },
         { "label": "Physiatry & PM&R", "href": "services/physiatry-pmr.html" }
