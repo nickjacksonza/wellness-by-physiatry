@@ -411,3 +411,5 @@ details.faq .faq-body p:last-child { margin-bottom: 0; }
   html.motion-ok .hero-figure img.settle { animation: settle 800ms var(--ease-standard) both; }
   @keyframes settle { from { transform: scale(1.05); } to { transform: scale(1); } }
 }
+
+.visually-hidden { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
