@@ -365,7 +365,7 @@ The main lead source, so this is the highest-leverage section of the build.
 
 **Sitewide JSON-LD**, `@id`-linked so the entities join up:
 
-- `MedicalClinic` (`#org`) — name, url, logo, telephone `+17733124423`, faxNumber `+17733124522`, email, `medicalSpecialty: PhysicalMedicineAndRehabilitation`, `availableLanguage: [en, es, pt]`, `openingHoursSpecification`, `sameAs`.
+- `MedicalClinic` (`#org`) — name, url, logo, telephone `+17733124423`, faxNumber `+17733124522`, email, `medicalSpecialty: [Musculoskeletal, Neurologic]`, `knowsLanguage: [en, es, pt]`, `openingHoursSpecification`, `sameAs`.
 - Two `MedicalClinic` location nodes with `PostalAddress` + `geo`, using the §4 table verbatim.
 - `Physician` (`#drkopp`) — Fabiolla Kopp, MD, `medicalSpecialty`, `alumniOf` / `worksFor`, `knowsLanguage`.
 - `MedicalWebPage` + `MedicalCondition` on each service page — TBI, Stroke, Concussion, Cognitive changes, Neurobehavioral changes.
