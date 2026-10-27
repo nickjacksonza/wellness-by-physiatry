@@ -4,7 +4,7 @@ description: Answers about referrals, your first visit, the conditions we treat,
 og_image: images/global/og-default.png
 body_class: page-faq
 ---
-<section class="page-hero no-media" data-section="hero">
+<section class="page-hero" data-section="hero">
   <div class="container hero-grid">
     <div class="hero-copy">
       <span class="eyebrow">Straight answers, plain language</span>
@@ -14,6 +14,14 @@ body_class: page-faq
         <a class="btn btn-primary" href="{{ root }}{{ cta_href }}" data-track="cta_click" data-label="faq-hero-appointment">{{ cta_label }}<svg class="btn-arrow" width="16" height="12" viewBox="0 0 16 12" fill="none" aria-hidden="true"><path d="M1 6h13M10 1.5L14.5 6 10 10.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         <a class="btn btn-ghost" href="tel:{{ phone_e164 }}" data-track="cta_click" data-label="faq-hero-phone">{{ phone }}</a>
       </div>
+    </div>
+    <div class="hero-media">
+      <figure class="hero-figure">
+        <picture>
+          <source type="image/avif" srcset="{{ root }}images/faq/hero-leaves-320w.avif 320w, {{ root }}images/faq/hero-leaves-480w.avif 480w, {{ root }}images/faq/hero-leaves-640w.avif 640w, {{ root }}images/faq/hero-leaves.avif 800w" sizes="(min-width: 1100px) 552px, (min-width: 700px) 600px, calc(100vw - 48px)">
+          <img src="{{ root }}images/faq/hero-leaves.jpg" alt="Broad, glossy green leaves in close-up" width="800" height="1000" fetchpriority="high" srcset="{{ root }}images/faq/hero-leaves-320w.jpg 320w, {{ root }}images/faq/hero-leaves-480w.jpg 480w, {{ root }}images/faq/hero-leaves-640w.jpg 640w, {{ root }}images/faq/hero-leaves.jpg 800w" sizes="(min-width: 1100px) 552px, (min-width: 700px) 600px, calc(100vw - 48px)">
+        </picture>
+      </figure>
     </div>
   </div>
 </section>
@@ -44,6 +52,12 @@ body_class: page-faq
         </div>
       </details>
       <details class="faq">
+        <summary>Can my family be involved in my care?</summary>
+        <div class="faq-body">
+          <p>Yes. Your family and caregivers are part of your care. Dr. Kopp explains what is happening in plain language, builds your care plan with you, and shares practical strategies for you and your family. When behavior puts someone at risk, we build a plan with the family so everyone at home knows what to do. If you can, bring a caregiver or loved one to your visits, because they can help share context about your recovery that is easy to miss on your own.</p>
+        </div>
+      </details>
+      <details class="faq">
         <summary>How do I get started?</summary>
         <div class="faq-body">
           <p>Call us at {{ phone }} or email {{ email }} to schedule a consultation. Health care providers can also call or fax referrals to us directly. We will assess your needs and build a personalized rehabilitation care plan for your recovery journey.</p>
@@ -69,7 +83,7 @@ body_class: page-faq
       <details class="faq">
         <summary>What conditions do you treat?</summary>
         <div class="faq-body">
-          <p>We treat all severities of traumatic brain injury (TBI), including concussion, along with diffuse axonal injury (DAI) and anoxic brain injury, which is caused by a lack of oxygen to the brain. We also treat stroke and other neurologic conditions that affect thinking, behavior, and physical function, including the secondary effects that often follow: spasticity, cognitive and behavioral changes, and lingering post-concussion symptoms.</p>
+          <p>We care for survivors of any type of brain injury or acquired brain condition. That includes all severities of traumatic brain injury (TBI), including concussion, along with stroke, dementia, encephalopathy, diffuse axonal injury (DAI), and anoxic brain injury, which is caused by a lack of oxygen to the brain. We also treat other neurologic conditions that affect thinking, behavior, and physical function, including the secondary effects that often follow: spasticity, cognitive and behavioral changes, and lingering post-concussion symptoms.</p>
         </div>
       </details>
       <details class="faq">
@@ -213,6 +227,11 @@ body_class: page-faq
         },
         {
           "@type": "Question",
+          "name": "Can my family be involved in my care?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Your family and caregivers are part of your care. Dr. Kopp explains what is happening in plain language, builds your care plan with you, and shares practical strategies for you and your family. When behavior puts someone at risk, we build a plan with the family so everyone at home knows what to do. If you can, bring a caregiver or loved one to your visits, because they can help share context about your recovery that is easy to miss on your own." }
+        },
+        {
+          "@type": "Question",
           "name": "How do I get started?",
           "acceptedAnswer": { "@type": "Answer", "text": "Call us at (773) 312-4423 or email fabiollakoppMD@wellnessbyphysiatry.com to schedule a consultation. Health care providers can also call or fax referrals to us directly. We will assess your needs and build a personalized rehabilitation care plan for your recovery journey." }
         },
@@ -224,7 +243,7 @@ body_class: page-faq
         {
           "@type": "Question",
           "name": "What conditions do you treat?",
-          "acceptedAnswer": { "@type": "Answer", "text": "We treat all severities of traumatic brain injury (TBI), including concussion, along with diffuse axonal injury (DAI) and anoxic brain injury, which is caused by a lack of oxygen to the brain. We also treat stroke and other neurologic conditions that affect thinking, behavior, and physical function, including the secondary effects that often follow: spasticity, cognitive and behavioral changes, and lingering post-concussion symptoms." }
+          "acceptedAnswer": { "@type": "Answer", "text": "We care for survivors of any type of brain injury or acquired brain condition. That includes all severities of traumatic brain injury (TBI), including concussion, along with stroke, dementia, encephalopathy, diffuse axonal injury (DAI), and anoxic brain injury, which is caused by a lack of oxygen to the brain. We also treat other neurologic conditions that affect thinking, behavior, and physical function, including the secondary effects that often follow: spasticity, cognitive and behavioral changes, and lingering post-concussion symptoms." }
         },
         {
           "@type": "Question",
