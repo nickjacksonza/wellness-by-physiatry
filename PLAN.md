@@ -367,7 +367,7 @@ The main lead source, so this is the highest-leverage section of the build.
 
 - `MedicalClinic` (`#org`) — name, url, logo, telephone `+17733124423`, faxNumber `+17733124522`, email, `medicalSpecialty: [Musculoskeletal, Neurologic]`, `knowsLanguage: [en, es, pt]`, `openingHoursSpecification`, `sameAs`.
 - Two `MedicalClinic` location nodes with `PostalAddress` + `geo`, using the §4 table verbatim.
-- `Physician` (`#drkopp`) — Fabiolla Kopp, MD, `medicalSpecialty`, `alumniOf` / `worksFor`, `knowsLanguage`.
+- `Person` + `Physician` (`#drkopp`; dual type because Physician alone does not allow `jobTitle`, `honorificSuffix` or `worksFor`) — Fabiolla Kopp, MD, `medicalSpecialty`, `alumniOf` / `worksFor`, `knowsLanguage`.
 - `MedicalWebPage` + `MedicalCondition` on each service page — TBI, Stroke, Concussion, Cognitive changes, Neurobehavioral changes.
 - `FAQPage` on `/faq.html` and the Home FAQ trio.
 - `Service` nodes on each service page, `provider` → `#org`.
