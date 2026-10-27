@@ -61,7 +61,7 @@
       "label": "Our Services",
       "href": "services.html",
       "children": [
-        { "label": "Overview", "href": "services.html" },
+        { "label": "Services Overview", "href": "services.html" },
         { "label": "Brain Injury & Neurological Conditions", "href": "services/brain-injury-rehabilitation.html" },
         { "label": "Concussion Management", "href": "services/concussion-management.html" },
         { "label": "Lifestyle Medicine", "href": "services/lifestyle-medicine.html" },
@@ -72,7 +72,7 @@
       "label": "Patient Resources",
       "href": "patient-resources.html",
       "children": [
-        { "label": "Overview", "href": "patient-resources.html" },
+        { "label": "Resources Overview", "href": "patient-resources.html" },
         { "label": "FAQs", "href": "faq.html" },
         { "label": "Insurance & Billing", "href": "insurance-billing.html" },
         { "label": "Referrals & Community", "href": "referrals.html" }
