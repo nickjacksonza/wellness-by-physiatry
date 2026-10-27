@@ -7,6 +7,9 @@ Static marketing site. Custom Python generator, no npm. `PLAN.md` is the full sp
     python build.py                        # renders src/ -> docs/
     cd docs && python -m http.server 3055  # preview
 
+`build.py` minifies the CSS bundle and `js/*.js` into `docs/` (`tools/minify.py`, stdlib only). Edit
+the readable sources in `css/` and `js/`, never the output.
+
 ## Rules
 
 - `docs/` is generated **and** git-tracked. Rebuild and commit it alongside every `src/`,

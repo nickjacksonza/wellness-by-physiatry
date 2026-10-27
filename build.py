@@ -16,9 +16,12 @@ import hashlib
 import json
 import re
 import shutil
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).parent
+sys.path.insert(0, str(ROOT / "tools"))
+from minify import minify_css, minify_js  # noqa: E402
 SRC = ROOT / "src"
 OUT = ROOT / "docs"
 STATIC_DIRS = ["js", "images", "fonts"]
@@ -158,10 +161,14 @@ def build():
         for p in (SRC / "partials").glob("*.html")
     }
 
-    css_bundle = "\n".join((ROOT / p).read_text(encoding="utf-8") for p in CSS_BUNDLE)
+    css_bundle = minify_css("\n".join((ROOT / p).read_text(encoding="utf-8") for p in CSS_BUNDLE))
+    js_min = {
+        name: minify_js((ROOT / "js" / f"{name}.js").read_text(encoding="utf-8"))
+        for name in ("scripts", "animations")
+    }
     ASSET_VERSIONS["css"] = asset_version(css_bundle.encode("utf-8"))
-    ASSET_VERSIONS["scripts"] = asset_version((ROOT / "js" / "scripts.js").read_bytes())
-    ASSET_VERSIONS["animations"] = asset_version((ROOT / "js" / "animations.js").read_bytes())
+    ASSET_VERSIONS["scripts"] = asset_version(js_min["scripts"].encode("utf-8"))
+    ASSET_VERSIONS["animations"] = asset_version(js_min["animations"].encode("utf-8"))
 
     pages = sorted((SRC / "pages").rglob("*.html"))
     for page in pages:
@@ -192,6 +199,10 @@ def build():
         if src_dir.exists():
             shutil.copytree(src_dir, OUT / name, ignore=EXCLUDE)
             print(f"  copied {name}/")
+
+    for name, code in js_min.items():
+        (OUT / "js" / f"{name}.js").write_text(code, encoding="utf-8")
+    print(f"  minified js/ ({', '.join(js_min)})")
 
     for extra in ["sitemap.xml", "robots.txt", "llms.txt", "_headers", ".htaccess", "CNAME"]:
         src_file = SRC / "static" / extra
