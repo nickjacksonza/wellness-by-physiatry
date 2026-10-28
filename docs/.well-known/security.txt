@@ -1,0 +1,6 @@
+# Security contact for the Wellness by Physiatry website (RFC 9116).
+# Report problems with the website only. Do not send patient or health information.
+Contact: mailto:fabiollakoppMD@wellnessbyphysiatry.com
+Expires: 2027-10-01T00:00:00.000Z
+Preferred-Languages: en, es, pt
+Canonical: https://wellnessbyphysiatry.com/.well-known/security.txt
