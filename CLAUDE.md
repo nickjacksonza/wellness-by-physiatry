@@ -10,6 +10,10 @@ Static marketing site. Custom Python generator, no npm. `PLAN.md` is the full sp
 `build.py` minifies the CSS bundle and `js/*.js` into `docs/` (`tools/minify.py`, stdlib only). Edit
 the readable sources in `css/` and `js/`, never the output.
 
+It also writes a Markdown copy of every page next to its HTML (`tools/html2md.py`, e.g. `about.md`) and
+stamps each page with a `dateModified` in JSON-LD, taken from the page source's last git commit (today
+if it has uncommitted edits).
+
 ## Rules
 
 - `docs/` is generated **and** git-tracked. Rebuild and commit it alongside every `src/`,

@@ -6,6 +6,8 @@ Two Chicago locations: East Loop (30 N Michigan Ave) and Lincoln Park (2555 N So
 
 ## Pages
 
+Every page is also available as clean Markdown at the same address with `.md` in place of `.html` (for example `/about.md`; the home page is `/index.md`).
+
 - [Home](https://wellnessbyphysiatry.com/): overview of the clinic and conditions treated
 - [About](https://wellnessbyphysiatry.com/about.html): the clinic and its approach
 - [Mission](https://wellnessbyphysiatry.com/mission.html): mission and vision
