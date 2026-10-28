@@ -64,7 +64,7 @@ Lifestyle medicine treats recovery through everyday habits and is central to how
 
 ### What languages do you support?
 
-We are committed to culturally competent care for Chicago's diverse community. Our clinic offers services, including group sessions, in English, Español, and Português. Language should never stand between you and quality care.
+We provide culturally competent care for Chicago's diverse community. Our clinic offers services, including group sessions, in English, Español, and Português. Language should never stand between you and quality care.
 
 ### Do you offer group sessions?
 

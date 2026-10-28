@@ -8,7 +8,7 @@ True recovery means restoring your whole self: mind, body, and spirit. Dr. Kopp'
 
 ## Bridging traditional care and health coaching to restore your energy
 
-Our lifestyle medicine services go beyond standard medical treatment by integrating traditional care with practical, science-based coaching. We partner with you to develop sustainable healthy habits that are essential for long-term well-being after a neurological injury, empowering you to manage stress, restore your focus, and reclaim your energy.
+Our lifestyle medicine services go beyond standard medical treatment by integrating traditional care with practical, science-based coaching. We partner with you to develop sustainable healthy habits that are essential for long-term well-being after a neurological injury. You learn to manage stress, restore your focus, and reclaim your energy.
 
 We build every plan around six connected habits: sleep, nutrition, stress management, movement, avoiding substances that work against your recovery, and staying connected to people who understand what you are going through. Together we set clear, SMART goals that become sustainable habits, supporting neuroplasticity, your brain's ability to rebuild its own connections, for a full and lasting recovery.
 
@@ -24,7 +24,7 @@ Neurological injury can also affect mood, emotional regulation, and stress. We h
 
 ### Supportive group sessions in English, Español, and Português
 
-You do not have to navigate your healing journey alone. In group sessions, you can talk with others who understand your experience, in a structured, inclusive, and supportive environment where you can share, listen, and learn. Sometimes the best care plans come from meaningful connection.
+You do not have to face your healing journey alone. In group sessions, you can talk with others who understand your experience, in a structured, inclusive, and supportive environment where you can share, listen, and learn. Sometimes the best care plans come from meaningful connection.
 
 Sessions run weekly for six weeks, then once every two months to keep that connection going as your recovery continues. We offer group sessions in English, Español, and Português, so care stays culturally competent for our Chicago community.
 
@@ -32,7 +32,7 @@ Sessions run weekly for six weeks, then once every two months to keep that conne
 
 Regular movement, paced to where you are in recovery, and staying clear of substances that work against healing, such as tobacco and recreational drugs, are as much a part of your treatment as any medication. We talk through these habits with you honestly and without judgment.
 
-Recovery is a unique journey for everyone. We continuously evaluate your progress and adjust your plan, teaching you how your brain, body, and daily habits work together, so the changes you make outlast your time in our care.
+Recovery looks different for everyone. We continuously evaluate your progress and adjust your plan, teaching you how your brain, body, and daily habits work together, so the changes you make outlast your time in our care.
 
 ## Questions about lifestyle medicine and group sessions
 

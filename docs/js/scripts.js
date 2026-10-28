@@ -44,16 +44,6 @@ var toggle=document.querySelector('.nav-toggle');
 var drawer=document.getElementById('mobile-drawer');
 var inertTargets=document.querySelectorAll('#main, .cta-band, .site-footer');
 if(toggle&&drawer){
-var drawerList=drawer.querySelector('.drawer-list');
-var navList=document.querySelector('.nav-list');
-if(drawerList&&navList)drawerList.innerHTML=navList.innerHTML;
-var headerCta=document.querySelector('.header-cta');
-if(headerCta){
-var drawerCta=headerCta.cloneNode(true);
-drawerCta.className='btn btn-primary drawer-cta';
-drawerCta.setAttribute('data-label','drawer-appointment');
-drawer.appendChild(drawerCta);
-}
 toggle.addEventListener('click',function(){
 var open=toggle.getAttribute('aria-expanded')==='true';
 toggle.setAttribute('aria-expanded',String(!open));

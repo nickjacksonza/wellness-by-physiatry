@@ -12,7 +12,7 @@ Our mission
 
 Wellness by Physiatry was created to deliver culturally competent, multilingual services designed to help you heal, grow, and thrive. That means care delivered in the language you are most comfortable in, and with an understanding of the culture, family and daily life you are coming back to, because those things shape how you heal as much as any care plan does.
 
-Beyond your own care, our vision is to build a resourceful community: a place where survivors, families and caregivers can find answers to the day-to-day questions that come with brain injury, alongside the evidence-based rehabilitation medicine and lifestyle modifications that help you navigate your healthcare with confidence.
+Beyond your own care, our vision is to build a resourceful community: a place where survivors, families and caregivers can find answers to the day-to-day questions that come with brain injury, alongside the evidence-based rehabilitation medicine and lifestyle modifications that help you manage your healthcare with confidence.
 
 Care that meets you in your language:
 
