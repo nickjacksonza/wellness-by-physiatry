@@ -84,6 +84,7 @@
     { "label": "Contact", "href": "contact.html" }
   ],
   "cta_label": "Request an appointment",
+  "header_cta_label": "Book a visit",
   "cta_href": "contact.html#appointment",
   "ga4_id": "G-MGRSN5EQ2F"
 }
