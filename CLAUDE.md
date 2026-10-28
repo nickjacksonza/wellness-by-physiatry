@@ -14,6 +14,9 @@ It also writes a Markdown copy of every page next to its HTML (`tools/html2md.py
 stamps each page with a `dateModified` in JSON-LD, taken from the page source's last git commit (today
 if it has uncommitted edits).
 
+`sitemap.xml` is generated too (`write_sitemap` in `build.py`), with each page's `lastmod` from the same date.
+It is no longer a file in `src/static/`; a new page appears in it automatically, ordered by `SITEMAP_ORDER`.
+
 ## Rules
 
 - `docs/` is generated **and** git-tracked. Rebuild and commit it alongside every `src/`,

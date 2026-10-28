@@ -169,6 +169,31 @@ def render(template, ctx):
     return re.sub(r"\{\{\s*([\w.-]+)\s*\}\}", sub, out)
 
 
+# Sitemap order: home first, then the rest as listed here; any page not named
+# goes last, alphabetically. 404.html is never listed.
+SITEMAP_ORDER = [
+    "index.html", "about.html", "mission.html", "team.html", "services.html",
+    "services/brain-injury-rehabilitation.html", "services/concussion-management.html",
+    "services/lifestyle-medicine.html", "services/physiatry-pmr.html",
+    "patient-resources.html", "referrals.html", "insurance-billing.html", "faq.html",
+    "contact.html", "privacy.html", "accessibility.html",
+]
+
+
+def write_sitemap(modified):
+    names = [n for n in modified if n != "404.html"]
+    names.sort(key=lambda n: (SITEMAP_ORDER.index(n) if n in SITEMAP_ORDER else len(SITEMAP_ORDER), n))
+    rows = []
+    for name in names:
+        path = "" if name == "index.html" else name
+        rows.append(f"  <url><loc>{site['domain']}/{path}</loc><lastmod>{modified[name]}</lastmod></url>")
+    xml = ('<?xml version="1.0" encoding="UTF-8"?>\n'
+           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+           + "\n".join(rows) + "\n</urlset>\n")
+    (OUT / "sitemap.xml").write_text(xml, encoding="utf-8")
+    print(f"  wrote sitemap.xml ({len(rows)} urls)")
+
+
 def build():
     if OUT.exists():
         for child in OUT.iterdir():
@@ -193,12 +218,14 @@ def build():
     ASSET_VERSIONS["animations"] = asset_version(js_min["animations"].encode("utf-8"))
 
     pages = sorted((SRC / "pages").rglob("*.html"))
+    modified = {}  # site-relative page path -> ISO date, for sitemap.xml
     for page in pages:
         meta, body = parse_page(page)
         out_path = OUT / page.relative_to(SRC / "pages")
         out_path.parent.mkdir(parents=True, exist_ok=True)
         ctx = build_context(meta, out_path)
         ctx["date_modified"] = page_modified(page)
+        modified[page.relative_to(SRC / "pages").as_posix()] = ctx["date_modified"]
 
         doc = (
             "<!doctype html>\n<html lang=\"en\">\n"
@@ -230,7 +257,9 @@ def build():
         (OUT / "js" / f"{name}.js").write_text(code, encoding="utf-8")
     print(f"  minified js/ ({', '.join(js_min)})")
 
-    for extra in ["sitemap.xml", "robots.txt", "llms.txt", "_headers", ".htaccess", "CNAME"]:
+    write_sitemap(modified)
+
+    for extra in ["robots.txt", "llms.txt", "_headers", ".htaccess", "CNAME"]:
         src_file = SRC / "static" / extra
         if src_file.exists():
             shutil.copy(src_file, OUT / extra)
