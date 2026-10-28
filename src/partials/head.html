@@ -16,6 +16,8 @@
 {{ font_preloads }}
 <link rel="preconnect" href="https://www.googletagmanager.com">
 <link rel="stylesheet" href="{{ root }}css/site.css?v={{ css_v }}">
+<link rel="alternate" type="text/markdown" href="{{ md_href }}">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","@id":"{{ canonical }}#webpage","url":"{{ canonical }}","dateModified":"{{ date_modified }}","publisher":{"@id":"{{ domain }}/#org"}}</script>
 <script>
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}

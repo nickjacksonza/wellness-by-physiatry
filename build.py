@@ -15,12 +15,15 @@ a folder for those links, so preview with a local server.
 import hashlib
 import json
 import re
+import datetime
 import shutil
+import subprocess
 import sys
 from pathlib import Path
 
 ROOT = Path(__file__).parent
 sys.path.insert(0, str(ROOT / "tools"))
+from html2md import main_to_markdown  # noqa: E402
 from minify import minify_css, minify_js  # noqa: E402
 SRC = ROOT / "src"
 OUT = ROOT / "docs"
@@ -113,6 +116,24 @@ def font_preloads(root, is_home):
     )
 
 
+def page_modified(path):
+    """ISO date a page's source last changed: today if it has uncommitted
+    edits, else its last commit date, else its file mtime."""
+    rel = str(path.relative_to(ROOT))
+    try:
+        dirty = subprocess.run(["git", "status", "--porcelain", "--", rel], cwd=ROOT,
+                               capture_output=True, text=True, check=True).stdout.strip()
+        if dirty:
+            return datetime.date.today().isoformat()
+        day = subprocess.run(["git", "log", "-1", "--format=%cs", "--", rel], cwd=ROOT,
+                             capture_output=True, text=True, check=True).stdout.strip()
+        if day:
+            return day
+    except (OSError, subprocess.CalledProcessError):
+        pass
+    return datetime.date.fromtimestamp(path.stat().st_mtime).isoformat()
+
+
 def build_context(meta, out_path):
     root = rel_prefix(out_path)
     page_url = out_path.relative_to(OUT).as_posix()
@@ -131,6 +152,7 @@ def build_context(meta, out_path):
         "og_image": meta.get("og_image", "images/global/og-default.png"),
         "body_class": meta.get("body_class", ""),
         "font_preloads": font_preloads(root, page_url == "index.html"),
+        "md_href": out_path.stem + ".md",
         "css_v": ASSET_VERSIONS["css"],
         "scripts_v": ASSET_VERSIONS["scripts"],
         "animations_v": ASSET_VERSIONS["animations"],
@@ -176,6 +198,7 @@ def build():
         out_path = OUT / page.relative_to(SRC / "pages")
         out_path.parent.mkdir(parents=True, exist_ok=True)
         ctx = build_context(meta, out_path)
+        ctx["date_modified"] = page_modified(page)
 
         doc = (
             "<!doctype html>\n<html lang=\"en\">\n"
@@ -187,7 +210,10 @@ def build():
             + partials["footer"]
             + "</body>\n</html>\n"
         )
-        out_path.write_text(render(doc, ctx), encoding="utf-8")
+        html = render(doc, ctx)
+        out_path.write_text(html, encoding="utf-8")
+        md = main_to_markdown(html, ctx["canonical"]) + f"\nSource: {ctx['canonical']}\n"
+        out_path.with_suffix(".md").write_text(md, encoding="utf-8")
         print(f"  built {out_path.relative_to(ROOT)}")
 
     (OUT / "css").mkdir(exist_ok=True)
