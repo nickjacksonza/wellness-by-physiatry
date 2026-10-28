@@ -2,7 +2,7 @@ Answers, coverage, and connection
 
 # Resources and Tools to Support Your Healing Journey
 
-Recovery is about more than what happens during your visit. It also means understanding your coverage, knowing what to expect, and having people to call when you need support beyond our office. Think of this page as a set of tools to support your healing. Below, you will find answers to common questions, a clear look at [insurance and billing](https://wellnessbyphysiatry.com/insurance-billing.html), and the [referrals](https://wellnessbyphysiatry.com/referrals.html) and community connections that carry your care forward.
+Recovery is about more than what happens during your visit. It also means understanding your coverage, knowing what to expect, and having people to call when you need support beyond our office. This page gathers tools to support your healing. Below, you will find answers to common questions, a clear look at [insurance and billing](https://wellnessbyphysiatry.com/insurance-billing.html), and the [referrals](https://wellnessbyphysiatry.com/referrals.html) and community connections that carry your care forward.
 
 [Request an appointment](https://wellnessbyphysiatry.com/contact.html#appointment) (773) 312-4423
 

@@ -18,7 +18,7 @@ Welcome to Wellness by Physiatry. I'm Dr. Kopp. I founded Wellness by Physiatry 
 
 As a [physical medicine and rehabilitation](https://wellnessbyphysiatry.com/services/physiatry-pmr.html) physician who specializes in brain injury rehabilitation medicine, I led patient care at TIRR Memorial Hermann Rehabilitation Hospital and Schwab Rehabilitation Hospital. Now, I want to be here to support you, your family and your caregivers on your journey.
 
-Wellness by Physiatry is a Chicago-based clinic dedicated to delivering care that is unique to you. Because your care should fit you, we focus on your strengths and the challenges that are important to you. We are here to join you in your wellness journey. The umbrella in our logo means that we are all connected, and so are your symptoms. We support you every step of the way.
+Wellness by Physiatry is a Chicago clinic that delivers care fitted to you. Because your care should fit you, we focus on your strengths and the challenges that matter to you. We are here to join you in your wellness journey. The umbrella in our logo means that we are all connected, and so are your symptoms.
 
 Now, I invite you to begin a health journey rooted in clarity, compassion, and long-lasting results.
 

@@ -54,11 +54,11 @@ Our services
 
 ## Personalized care plans for whole-body wellness
 
-We offer a variety of services based on your unique needs and goals.
+Our services are built around your needs and goals.
 
 ### Brain Injury & Neurological Conditions
 
-A team of specialists work together to help you regain strength, independence, and daily function. We put a plan together that works for your unique experience, needs, and goals.
+A team of specialists work together to help you regain strength, independence, and daily function. We put a plan together that works for your experience, needs, and goals.
 
 [Learn more about brain injury and neurological care](https://wellnessbyphysiatry.com/services/brain-injury-rehabilitation.html)
 
