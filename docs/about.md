@@ -10,11 +10,11 @@ Our story
 
 ## Toward autonomy and care that makes sense to you
 
-Education is key. At Wellness by Physiatry we believe it is important that you understand the changes you are experiencing in your brain and body. We help you move toward true autonomy by giving you the tools, and coaching you every step of the way, with the clarity you need to understand your own recovery. Instead of rushing through symptoms or offering fragmented advice, we slow down and teach you how your brain, body, and daily habits work together.
+Education comes first. You should understand the changes happening in your brain and body. We give you the tools and coach you through each step, so you can work toward autonomy with the clarity you need to understand your own recovery. We do not rush through symptoms or offer fragmented advice. We slow down and teach you how your brain, body, and daily habits work together.
 
 As a [physiatrist](https://wellnessbyphysiatry.com/services/physiatry-pmr.html) (physical medicine and rehabilitation, PM&R) specialized in [brain injury](https://wellnessbyphysiatry.com/services/brain-injury-rehabilitation.html), I spend time on the things that are important for you, connecting function, safety, and community. I pay close attention to how acquired brain conditions affect thinking, movement, swallowing, behavior, and overall health. I also integrate the six pillars of lifestyle medicine to help you make choices that support long-lasting results. The pillars refer to basic functions such as sleep, nutrition, keeping stress levels in check, regular exercise, and minimizing the use of risky substances such as recreational drugs and alcoholic beverages.
 
-By blending [evidence-based rehabilitation](https://wellnessbyphysiatry.com/services.html) and practical [lifestyle medicine](https://wellnessbyphysiatry.com/services/lifestyle-medicine.html) guidance, we deliver compassionate and personalized care. Wellness by Physiatry creates a patient experience that feels empowering, transparent, and genuinely supportive. It's care that helps people not just get better, but understand how to stay better.
+By blending [evidence-based rehabilitation](https://wellnessbyphysiatry.com/services.html) with practical [lifestyle medicine](https://wellnessbyphysiatry.com/services/lifestyle-medicine.html) guidance, we deliver compassionate, personalized care. You will know what we are doing and why, and you will feel supported. The goal is care that helps you get better and understand how to stay better.
 
 > The umbrella in our logo means that we are all connected, and so are your symptoms.
 
@@ -57,7 +57,7 @@ Welcome to Wellness by Physiatry. I'm Dr. Kopp. I founded Wellness by Physiatry 
 
 As a [physical medicine and rehabilitation](https://wellnessbyphysiatry.com/services/physiatry-pmr.html) physician who specializes in brain injury rehabilitation medicine, I led patient care at TIRR Memorial Hermann Rehabilitation Hospital and Schwab Rehabilitation Hospital. Now, I want to be here to support you, your family and your caregivers on your journey.
 
-Wellness by Physiatry is a Chicago-based clinic dedicated to delivering care that is unique to you. Because your care should fit you, we focus on your strengths and the challenges that are important to you. We are here to join you in your wellness journey. The umbrella in our logo means that we are all connected, and so are your symptoms. We support you every step of the way.
+Wellness by Physiatry is a Chicago clinic that delivers care fitted to you. Because your care should fit you, we focus on your strengths and the challenges that matter to you. We are here to join you in your wellness journey. The umbrella in our logo means that we are all connected, and so are your symptoms.
 
 Now, I invite you to begin a health journey rooted in clarity, compassion, and long-lasting results.
 

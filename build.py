@@ -100,11 +100,12 @@ def nav_html(root, current):
     return "".join(items)
 
 
-# Fonts used above the fold, preloaded so they download alongside site.css
-# instead of after it. The home hero uses Newsreader 400 + italic; inner page
-# heroes use Newsreader 500. Manrope 400/600/700 covers body, nav and buttons.
-FONTS_COMMON = ["manrope-latin-400", "manrope-latin-600", "manrope-latin-700"]
-FONTS_HOME = ["newsreader-latin-400", "newsreader-latin-400-italic"]
+# The three fonts that carry most of the above-the-fold text, preloaded so they
+# download alongside site.css. Preloading more than 2-3 fonts is counter-productive.
+# The home hero heading is Newsreader 400, inner page heroes use Newsreader 500;
+# Manrope 400 is body text and 600 the nav links. Other weights load on demand.
+FONTS_COMMON = ["manrope-latin-400", "manrope-latin-600"]
+FONTS_HOME = ["newsreader-latin-400"]
 FONTS_INNER = ["newsreader-latin-500"]
 
 
